@@ -1,5 +1,13 @@
+import Navbar from "@/components/Navbar";
+
 export default function Home() {
+
   return (
-    <h1>Top</h1>
+    <>
+      <Navbar />
+      <main className='relative overflow-hidden'>
+        <h1>Home</h1>
+      </main>
+    </>
   )
 }

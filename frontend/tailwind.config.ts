@@ -15,8 +15,7 @@ module.exports = {
       // Extensão de cores personalizadas
       colors: {
         green: {
-          50: '#30AF5B',
-          90: '#292C27',
+          90: '#43C6AC',
         },
         gray: {
           10: '#EEEEEE',
@@ -25,24 +24,19 @@ module.exports = {
           50: '#585858',
           90: '#141414',
         },
-        orange: {
-          50: '#FF814C',
+        red: {
+          50: '#F25757',
         },
         blue: {
-          70: '#021639',
+          90: '#010326',
         },
         yellow: {
-          50: '#FEC601',
+          50: '#F2E863',
         },
+        white: {
+          90: '#F3F3F3'
+        }
       },
-      // Extensão de imagens de fundo personalizadas
-      // backgroundImage: {
-      //   'bg-img-1': "url('/img-1.png')",
-      //   'bg-img-2': "url('/img-2.png')",
-      //   'feature-bg': "url('/feature-bg.png')",
-      //   pattern: "url('/pattern.png')",
-      //   'pattern-2': "url('/pattern-bg.png')",
-      // },
       // Extensão de telas e larguras máximas
       screens: {
         xs: '400px',
