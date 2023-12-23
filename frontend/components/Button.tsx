@@ -1,21 +1,21 @@
 import { HiAnnotation, HiOutlineArrowNarrowRight } from "react-icons/hi";
 
-type NewButtonProps = {
+type ButtonProps = {
     type: 'button' | 'submit';
     title: string;
     variant: 'Annotation' | 'Arrow';
-    full?: boolean;
 }
 
-const NewButton = ({ type, title, variant, full } : NewButtonProps) => {
+const Button = ({ type, title, variant } : ButtonProps) => {
+    
     const Icon = variant === 'Annotation' ? HiAnnotation : HiOutlineArrowNarrowRight;
 
     return (
         <button
-            className="flexCenter gap-3 rounded-[8px] border bg-green-90 text-white-90 px-4 py-3 shadow"
+            className="bg-green-100 flex flexCenter px-4 py-3 rounded-lg text-white-90 cursor-pointer hover:opacity-90"
             type={type}
         >
-            <label className="text-button whitespace-nowrap cursor-pointer">{title}</label>
+            <label className="mr-2 bold-16 cursor-pointer ">{title}</label>
             <Icon 
                 size='18'
             />
@@ -23,4 +23,4 @@ const NewButton = ({ type, title, variant, full } : NewButtonProps) => {
     )
 }
 
-export default NewButton
+export default Button

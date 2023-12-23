@@ -1,40 +1,40 @@
-/** 
- * Configuração do Tailwind CSS
- * @type {import('tailwindcss').Config} 
- */
-module.exports = {
-  // Especifica os arquivos que serão processados pelo Tailwind CSS
+const {nextui} = require("@nextui-org/react");
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './containers/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
-  // Configurações personalizadas do tema
   theme: {
     extend: {
       // Extensão de cores personalizadas
       colors: {
         green: {
-          90: '#43C6AC',
+          100: '#05F29B',
         },
         gray: {
-          10: '#EEEEEE',
-          20: '#A2A2A2',
-          30: '#7B7B7B',
+          10: '#959595',
+          20: '#7E7E7E',
           50: '#585858',
-          90: '#141414',
+          75: '#323232',
+          100: '#0C0C0C',
         },
-        red: {
-          50: '#F25757',
+        crimson: {
+          100: '#F25757',
         },
         blue: {
-          90: '#010326',
+          100: '#010326',
         },
         yellow: {
-          50: '#F2E863',
+          100: '#F2E863',
         },
         white: {
-          90: '#F3F3F3'
+          90: '#F3F3F3',
+          50: '#EEEEEE',
         }
       },
       // Extensão de telas e larguras máximas
@@ -52,6 +52,7 @@ module.exports = {
       },
     },
   },
-  
-  plugins: [],
-};
+  darkMode: "class",
+  plugins: [nextui()],
+}
+export default config
