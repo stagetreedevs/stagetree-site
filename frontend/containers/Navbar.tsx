@@ -45,7 +45,7 @@ const Navbar = () => {
           <LanguagesDropdown />
         </div>
 
-        <div onClick={toggleMenu} className="inline-block cursor-pointer lg:hidden bg-green-100 p-2 rounded-lg shadow-lg">
+        <div onClick={toggleMenu} className="cursor-pointer lg:hidden bg-green-100 p-2 rounded-lg shadow-lg">
           <HiMenu
             size={24}
             color='#eeeeee'

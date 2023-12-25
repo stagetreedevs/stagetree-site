@@ -122,8 +122,8 @@ p {
 }
 
 .crimson-ball {
-  width: 500px;
-  height: 500px;
+  width: 350px;
+  height: 350px;
   border-radius: 500px;
   opacity: 0.3;
   background: #F25757;
@@ -131,8 +131,8 @@ p {
 }
 
 .yellow-ball {
-  width: 350px;
-  height: 350px;
+  width: 150px;
+  height: 150px;
   border-radius: 350px;
   opacity: 0.3;
   background: #F2E863;
