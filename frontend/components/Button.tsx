@@ -12,7 +12,7 @@ const Button = ({ type, title, variant } : ButtonProps) => {
 
     return (
         <button
-            className="bg-green-100 flex flexCenter px-4 py-3 rounded-lg text-white-90 cursor-pointer hover:opacity-90"
+            className="bg-green-100 flex flexCenter px-4 py-3 rounded-lg text-white-90 cursor-pointer hover:bg-blue-100 transition-all shadow-lg"
             type={type}
         >
             <label className="mr-2 bold-16 cursor-pointer ">{title}</label>

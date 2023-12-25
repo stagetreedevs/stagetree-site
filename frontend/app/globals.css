@@ -4,12 +4,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@400;700&family=Montserrat:wght@700&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
+}
+
+img {
+  width: auto;
 }
 
 button {
@@ -18,6 +22,12 @@ button {
 
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: #f3f3f3;
+  position: relative;
+}
+
+.sectionGray {
+  background-color: #eeeeee;
 }
 
 p {
@@ -26,10 +36,12 @@ p {
 
 
 @layer utilities {
+
   /* Contêiner máximo centralizado e configurável em largura */
   .maxContainer {
-    @apply mx-auto max-w-[1440px] ;
+    @apply mx-auto max-w-[1300px];
   }
+
   /* Contêiner de preenchimento configurável */
   .paddingContainer {
     @apply px-6 lg:px-20 xl:px-0;
@@ -39,12 +51,15 @@ p {
   .flexCenter {
     @apply flex items-center justify-center;
   }
+
   .flexBetween {
     @apply flex items-center justify-between;
   }
+
   .flexStart {
     @apply flex items-center justify-start;
   }
+
   .flexEnd {
     @apply flex items-center justify-end;
   }
@@ -53,12 +68,15 @@ p {
   .regular-12 {
     @apply text-[12px] font-normal leading-[120%];
   }
+
   .regular-14 {
     @apply text-[14px] font-normal leading-[120%];
   }
+
   .regular-18 {
-    @apply text-[18px] font-normal leading-[120%];
+    @apply text-[18px] font-normal leading-[160%];
   }
+
   .regular-20 {
     @apply text-[20px] font-normal leading-[120%];
   }
@@ -66,18 +84,27 @@ p {
   .bold-16 {
     @apply text-[16px] font-bold leading-[120%];
   }
+
   .bold-64 {
     @apply text-[64px] font-bold leading-[120%];
   }
+
   .bold-44 {
     @apply text-[44px] font-bold leading-[120%];
   }
+
   .bold-32 {
     @apply text-[32px] font-bold leading-[120%];
   }
+
   .bold-24 {
     @apply text-[24px] font-bold leading-[120%];
   }
+}
+
+.glassMorphism {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(5px);
 }
 
 
@@ -88,6 +115,29 @@ p {
 
 /* Esconde a barra de rolagem para IE, Edge e Firefox */
 .hide-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.crimson-ball {
+  width: 500px;
+  height: 500px;
+  border-radius: 500px;
+  opacity: 0.3;
+  background: #F25757;
+  filter: blur(200px);
+}
+
+.yellow-ball {
+  width: 350px;
+  height: 350px;
+  border-radius: 350px;
+  opacity: 0.3;
+  background: #F2E863;
+  filter: blur(200px);
+  top: 0;
+  right: -100px;
+  position: absolute;
 }
