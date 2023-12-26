@@ -4,12 +4,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@400;700&family=Montserrat:wght@700&display=swap');
 
+html{
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
+
 }
 
 img {
@@ -23,6 +28,7 @@ button {
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #f3f3f3;
+  color: #010326;
   position: relative;
 }
 
@@ -70,7 +76,7 @@ p {
   }
 
   .regular-14 {
-    @apply text-[14px] font-normal leading-[120%];
+    @apply text-[14px] font-normal leading-[160%];
   }
 
   .regular-18 {
@@ -99,6 +105,9 @@ p {
 
   .bold-24 {
     @apply text-[24px] font-bold leading-[120%];
+  }
+  .bold-20 {
+    @apply text-[20px] font-bold leading-[120%];
   }
 }
 

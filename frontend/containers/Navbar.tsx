@@ -69,7 +69,7 @@ const Navbar = () => {
               </div>
 
             </div>
-            <div className='flexBetween ite'>
+            <div className='flexBetween'>
               <ul className="flex flex-col gap-3 mt-5">
                 {NAV_LINKS.map((link) => (
                   <Link href={link.href} key={link.key} className="bold-16 hover:text-green-100">
@@ -86,7 +86,7 @@ const Navbar = () => {
         {/* Overlay */}
         {menuOpen && (
           <div
-            className="fixed top-0 left-0 w-full h-full bg-black opacity-70 z-40"
+            className="fixed top-0 left-0 w-screen h-screen bg-black opacity-70 z-40"
             onClick={toggleMenu}
           ></div>
         )}

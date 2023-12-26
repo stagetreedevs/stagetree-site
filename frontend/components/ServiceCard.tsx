@@ -16,7 +16,7 @@ const ServiceCard = ({image, title, description} : ServiceCardProps) => {
                 height={166}
                 alt={title}
             />
-            <h4 className='bold-24 mt-8 mb-4 text-center min-h-[64px] flexCenter'>{title}</h4>
+            <h4 className='bold-20 mt-8 mb-4 text-center min-h-[64px] flexCenter lg:bold24'>{title}</h4>
             <p className='regular-14 text-gray-20 text-center'>{description}</p>
         </div>
     )
