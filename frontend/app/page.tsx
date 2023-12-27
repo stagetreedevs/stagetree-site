@@ -6,6 +6,7 @@ import Footer from "@/containers/Footer";
 import Hero from "@/containers/Hero";
 import Navbar from "@/containers/Navbar";
 import Services from "@/containers/Services";
+import Technologies from "@/containers/Technologies";
 import Works from "@/containers/Works";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <About/>
         <Services />
         <Works />
+        <Technologies />
         <Customers />
         <CTA />
         <Contact />

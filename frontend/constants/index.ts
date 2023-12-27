@@ -32,7 +32,57 @@ export const WORKS_CARD_INFO = [
         tags: [
             'UI',
             'WEB',
-            'SISTEMA',
+            'MOBILE',
         ],
+    },
+]
+
+export const TECHNOLOGIES_STAGE = [
+    {
+        title: 'ReactJS',
+        description: 'lorem ipsum bla bla bla',
+        image: '/technologies/react.png'
+    },
+    {
+        title: 'Django',
+        description: 'lorem ipsum bla bla bla',
+        image: '/technologies/django.png'
+    },
+    {
+        title: 'Flutter',
+        description: 'lorem ipsum bla bla bla',
+        image: '/technologies/flutter.png'
+    },
+    {
+        title: 'Node',
+        description: 'lorem ipsum bla bla bla',
+        image: '/technologies/node.png'
+    },
+]
+
+export const COUSTOMERS_LOGO = [
+    {
+        title: 'Logo1',
+        image: '/logomockup.png'
+    },
+    {
+        title: 'Logo2',
+        image: '/logomockup.png'
+    },
+    {
+        title: 'Logo3',
+        image: '/logomockup.png'
+    },
+    {
+        title: 'Logo4',
+        image: '/logomockup.png'
+    },
+    {
+        title: 'Logo5',
+        image: '/logomockup.png'
+    },
+    {
+        title: 'Logo6',
+        image: '/logomockup.png'
     },
 ]
