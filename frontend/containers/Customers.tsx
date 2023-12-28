@@ -16,7 +16,7 @@ const Customers = () => {
           </h2>
           <p className='regular-16 text-gray-20 text-center lg:regular-18'>Empresas que confiam na Stage Tree para ajudar em seus negócios de TIC.</p>
         </div>
-        <div className='grid grid-cols-1 gap-4 lg:grid-cols-4'>
+        <div className='grid grid-cols-2 gap-8 lg:grid-cols-4'>
           {COUSTOMERS_LOGO.map((image) => (
             <Image
               src={image.image}

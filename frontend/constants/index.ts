@@ -86,3 +86,9 @@ export const COUSTOMERS_LOGO = [
         image: '/logomockup.png'
     },
 ]
+
+export const SOCIAL_STAGE = [
+    { href: 'https://www.linkedin.com/company/stagetree', key: 'linkdln' },
+    { href: 'https://www.behance.net/stagetree', key: 'instagram' },
+    { href: 'https://www.instagram.com/stagetree/rks', key: 'behance' },
+]

@@ -6,8 +6,7 @@ import { HiChevronRight } from 'react-icons/hi';
 import Image from 'next/image';
 import Link from 'next/link';
 import 'swiper/css';
-import 'swiper/css/pagination';
-// import './styles.css'; // You may need to adjust the path based on your project structure
+
 
 type WorksCardInfo = {
     image: string;
