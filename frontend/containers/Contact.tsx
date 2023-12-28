@@ -7,7 +7,7 @@ const Contact = () => {
     <section className='w-full sectionGray py-40'>
       <div className='maxContainer paddingContainer flexBetween flex-col gap-16'>
         <div>
-          <h2 className='bold-24 mb-6 text-center lg:text-start lg:bold-44'>Entre em <span className='text-green-100'>Contato</span> </h2>
+          <h2 className='bold-32 mb-6 text-center lg:text-start lg:bold-44'>Entre em <span className='text-green-100'>Contato</span> </h2>
         </div>
         <div className='flexBetween w-full gap-10 flex-col lg:flex-row'>
           <div className='w-full max-w-[384px]'>
@@ -15,7 +15,7 @@ const Contact = () => {
               size={50}
               color='#010326'
             />
-            <h3 className='bold-32 mt-8'>Email</h3>
+            <h3 className='bold-24 mt-8'>Email</h3>
             <p className='regular-18 text-gray-50 mb-8 mt-4'>Sinta-se à vontade para entrar em contato conosco caso tenha alguma dúvida.</p>
             <Link
               href='mailto: contato@stagetree.com'
@@ -30,7 +30,7 @@ const Contact = () => {
               size={50}
               color='#010326'
             />
-            <h3 className='bold-32 mt-8'>Telefone</h3>
+            <h3 className='bold-24 mt-8'>Telefone</h3>
             <p className='regular-18 text-gray-50 mb-8 mt-4'>Nossa equipe está aqui para ajudá-lo no que pudermos. Também via Whatsapp.</p>
             <Link
               href='tel: contato@stagetree.com'
@@ -45,7 +45,7 @@ const Contact = () => {
               size={50}
               color='#010326'
             />
-            <h3 className='bold-32 mt-8'>QG</h3>
+            <h3 className='bold-24 mt-8'>QG</h3>
             <p className='regular-18 text-gray-50 mb-8 mt-4'>Esperamos ver você em breve.</p>
             <Link
               href='https://maps.app.goo.gl/uTh4iHp3iuLNcPgMA'

@@ -7,7 +7,7 @@ const About = () => {
     <section className='py-40 w-full sectionGray' id='about'>
       <div className='maxContainer paddingContainer flexBetween gap-20 lg:flex-row flex-col'>
         <div className='w-full max-w-[600px] flexCenter flex-col lg:items-start'>
-          <h2 className='bold-24 mb-6 text-center lg:text-start lg:bold-44'>
+          <h2 className='bold-32 mb-6 text-center lg:text-start lg:bold-44'>
             Colocando as <span className='text-green-100'>pessoas em primeiro lugar</span> no desenvolvimento de produtos digitais
           </h2>
           <p className='regular-16 text-gray-20 text-center lg:text-start lg:regular-18 mb-6'>

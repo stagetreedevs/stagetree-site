@@ -1,64 +1,53 @@
-import React from "react";
-import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/dropdown";
+'use client'
+
+import React, { useState } from "react";
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem} from "@nextui-org/react";
 import Image from "next/image";
 
-export default function LanguagesDropdown() {
-  const [selectedKeys, setSelectedKeys] = React.useState(new Set(["portuguese"])); // Defina a chave inicial aqui se desejar
+export default function App() {
+  const [selectedImage, setSelectedImage] = useState('/pt_icon.png'); // Defina a imagem inicial aqui se desejar
 
-  const selectedImage = React.useMemo(() => {
-    // Encontre o item correspondente à chave selecionada
-    const selectedItem = dropdownItems.find((item) => item.key === selectedKeys.values().next().value);
-
-    // Retorna a imagem correspondente se o item for encontrado
-    return selectedItem ? selectedItem.image : null;
-  }, [selectedKeys]);
-
+  const handleSelection = (key: string) => {
+    switch(key) {
+      case 'english':
+        setSelectedImage('/us_icon.png');
+        break;
+      case 'spanish':
+        setSelectedImage('/sp_icon.png');
+        break;
+      default:
+        setSelectedImage('/pt_icon.png');
+    }
+  }
 
   return (
     <Dropdown>
       <DropdownTrigger>
-        <button>
-          {selectedImage && (
-            <Image
-              src={selectedImage}
-              width={24}
-              height={24}
-              alt="language"
-            />
-          )}
-        </button>
+        <Image src={selectedImage} width={24} height={24} alt="language" className="cursor-pointer"/>
       </DropdownTrigger>
-
-      <DropdownMenu
-        aria-label="Single selection example"
-        variant="flat"
-        disallowEmptySelection
-        selectionMode="single"
-        selectedKeys={selectedKeys}
-        onSelectionChange={setSelectedKeys}
-      >
-        {dropdownItems.map((item) => (
-          <DropdownItem key={item.key} >
-            <div className="flex items-center flex-row gap-2 ">
-
-              <Image
-                src={item.image}
-                width={24}
-                height={24}
-                alt="language"
-              />
-              {item.label}
-
-            </div>
-          </DropdownItem>
-        ))}
+      <DropdownMenu variant="faded" aria-label="Dropdown menu with icons">
+        <DropdownItem
+          key="portuguese"
+          startContent={<Image src='/pt_icon.png' width={24} height={24} alt="language"/>}
+          onClick={() => handleSelection('portuguese')}
+        >
+          Português
+        </DropdownItem>
+        <DropdownItem
+          key="english"
+          startContent={<Image src='/us_icon.png' width={24} height={24} alt="language"/>}
+          onClick={() => handleSelection('english')}
+        >
+          English
+        </DropdownItem>
+        <DropdownItem
+          key="spanish"
+          startContent={<Image src='/sp_icon.png' width={24} height={24} alt="language"/>}
+          onClick={() => handleSelection('spanish')}
+        >
+          Spanish
+        </DropdownItem>
       </DropdownMenu>
     </Dropdown>
   );
 }
-
-const dropdownItems = [
-  { key: "english", image: "/us_icon.png", label: "Inglês" },
-  { key: "spanish", image: "/sp_icon.png", label: "Espanhol" },
-  { key: "portuguese", image: "/pt_icon.png", label: "Português" },
-];

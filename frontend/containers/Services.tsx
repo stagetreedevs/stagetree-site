@@ -7,7 +7,7 @@ const Services = () => {
       <div className='flexBetween flex-col'>
         <div className='flexBetween flex-col max-w-[1000px] w-full'>
           <h3 className='bold-20 text-center lg:bold-24'>Inovação</h3>
-          <h2 className='bold-24 mb-4 text-center lg:bold-44 mt-8'>
+          <h2 className='bold-32 mb-4 text-center lg:bold-44 mt-8'>
             Transformando <span className='text-green-100'>ideais</span> em <span className='text-green-100'>soluções</span> digitais poderosas
           </h2>
           <p className='regular-16 text-gray-20 text-center lg:regular-18'>Na StageTree, nos especializamos em fornecer soluções digitais de primeira linha para o seu negócio. Nossos serviços incluem desenvolvimento de sistemas, criação de aplicativos e design de sites, todos voltados para ajudá-lo a atingir seus objetivos.</p>

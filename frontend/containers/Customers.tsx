@@ -9,7 +9,7 @@ const Customers = () => {
     <section className='w-full py-40 sectionGray'>
       <div className='maxContainer paddingContainer flexBetween flex-col gap-12'>
         <div className='flexBetween flex-col max-w-[1000px] w-full'>
-          <h2 className='bold-24 mb-4 text-center lg:bold-44 mt-8'>
+          <h2 className='bold-32 mb-4 text-center lg:bold-44 mt-8'>
             Alguns <span className='text-green-100'>
               Clientes
             </span>

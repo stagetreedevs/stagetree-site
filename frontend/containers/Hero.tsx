@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className='maxContainer paddingContainer flexBetween flex-col-reverse lg:flexCenter lg:flex-row h-full z-10 pt-[200px] pb-44 lg:py-44 '>
       <div className='mt-40 relative flex flex-col lg:w-1/2 w-full max-w-[622px] lg:mt-0'>
-          <h1 className='bold-32 mb-6 text-center lg:text-start lg:bold-64'>Desenvolvendo produtos digitais de <span className='text-green-100'>alto nivel</span>.</h1>
+          <h1 className='bold-44 mb-6 text-center lg:text-start lg:bold-64'>Desenvolvendo produtos digitais de <span className='text-green-100'>alto nivel</span>.</h1>
           <p className='regular-18 text-gray-20 text-center lg:text-start'>Se você precisa de sistemas online, aplicativos ou sites, nossa equipe de especialistas fornecerá soluções excepcionais que geram valor.</p>
       </div>
       <div className='flexCenter w-full h-full items-start'>
