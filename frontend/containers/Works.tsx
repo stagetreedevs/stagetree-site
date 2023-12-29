@@ -1,9 +1,9 @@
 'use client'
 
-import WorksSwiper from '@/components/WorksSwiper'
 import React from 'react'
 import { WORKS_CARD_INFO } from '@/constants';
 import { motion } from 'framer-motion';
+import { WorksCarousel } from '@/components/WorksCorousel';
 
 const Works = () => {
   return (
@@ -20,7 +20,7 @@ const Works = () => {
           <p className='regular-16 text-gray-20 text-center lg:regular-18'>Explore nosso portfólio de projetos de sucesso.</p>
         </div>
         <div className='w-full'>
-          <WorksSwiper worksData={WORKS_CARD_INFO} />
+          <WorksCarousel worksData={WORKS_CARD_INFO} />
         </div>
       </motion.div>
     </section>
