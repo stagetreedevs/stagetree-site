@@ -24,16 +24,18 @@ type WorksSwiperProps = {
 };
 
 const WorksSwiper: React.FC<WorksSwiperProps> = ({ worksData }) => {
+    const swiperRef = useRef<Swiper | null>(null);
 
     return (
         <>
             <Swiper
-                navigation={true}
                 modules={[Navigation]}
                 className="mySwiper"
+                onSwiper={(swiper) => (swiperRef.current = swiper)}
                 slidesPerGroup={1}
                 spaceBetween={30}
                 slidesPerView={1}
+                loop={true}
                 breakpoints={{
                     800: {
                         slidesPerView: 2,
@@ -68,6 +70,17 @@ const WorksSwiper: React.FC<WorksSwiperProps> = ({ worksData }) => {
                     </SwiperSlide>
                 ))}
             </Swiper>
+            <div className='mt-8'>
+                <div className='gap-2 flexCenter'>
+                    <button className="prev-button-custom bg-green-100 p-3 rounded-[100px] shadow-md hover:bg-blue-100 transition-all" onClick={() => swiperRef.current.slidePrev()}>
+                        <HiArrowLeft color='#eeeeee' />
+                    </button>
+                    <button className="next-button-custom bg-green-100 p-3 rounded-[100px] shadow-md hover:bg-blue-100 transition-all" onClick={() => swiperRef.current.slideNext()}>
+                        <HiArrowRight color='#eeeeee' />
+                    </button>
+                </div>
+            </div>
+
         </>
     );
 };

@@ -1,16 +1,23 @@
+'use client'
+
 import Link from 'next/link'
 import React from 'react'
 import { HiMail, HiPhone, HiOutlineLocationMarker } from 'react-icons/hi'
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   return (
     <section className='w-full sectionGray py-40'>
       <div className='maxContainer paddingContainer flexBetween flex-col gap-16'>
-        <div>
+        <motion.div
+        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+        transition={{ duration: 0.5 }}>
           <h2 className='bold-32 mb-6 text-center lg:text-start lg:bold-44'>Entre em <span className='text-green-100'>Contato</span> </h2>
-        </div>
+        </motion.div>
         <div className='flexBetween w-full gap-10 flex-col lg:flex-row'>
-          <div className='w-full max-w-[384px] flexCenter flex lg:items-start flex-col'>
+        <motion.div
+        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+        transition={{ duration: 0.5 }} className='w-full max-w-[384px] flexCenter flex lg:items-start flex-col'>
             <HiMail
               size={50}
               color='#010326'
@@ -24,8 +31,10 @@ const Contact = () => {
             >
               contato@stagetree.com
             </Link>
-          </div>
-          <div className='w-full max-w-[384px] flexCenter flex lg:items-start flex-col'>
+          </motion.div>
+          <motion.div
+        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+        transition={{ duration: 0.7 }} className='w-full max-w-[384px] flexCenter flex lg:items-start flex-col'>
             <HiPhone
               size={50}
               color='#010326'
@@ -39,8 +48,10 @@ const Contact = () => {
             >
               +55 (85) 99999-9999
             </Link>
-          </div>
-          <div className='w-full max-w-[384px] flexCenter flex lg:items-start flex-col'>
+          </motion.div>
+          <motion.div
+        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+        transition={{ duration: 0.8 }} className='w-full max-w-[384px] flexCenter flex lg:items-start flex-col'>
             <HiOutlineLocationMarker
               size={50}
               color='#010326'
@@ -54,7 +65,7 @@ const Contact = () => {
             >
               117 Rua Pedro Gomes, São Gonçalo do Amarante , Brazil
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

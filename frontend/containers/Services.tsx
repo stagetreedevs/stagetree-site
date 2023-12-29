@@ -8,8 +8,8 @@ const Services = () => {
   return (
     <section className='maxContainer paddingContainer py-40' id='services'>
       <motion.div
-        // whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
-        // transition={{ duration: 0.5 }}
+        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+        transition={{ duration: 0.5 }}
         className='flexBetween flex-col'>
         <div className='flexBetween flex-col max-w-[1000px] w-full'>
           <h3 className='bold-20 text-center lg:bold-24'>Inovação</h3>

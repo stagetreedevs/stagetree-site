@@ -3,11 +3,14 @@
 import React from 'react'
 import { COUSTOMERS_LOGO } from '@/constants'
 import Image from 'next/image'
+import { motion } from 'framer-motion';
 
 const Customers = () => {
   return (
     <section className='w-full py-40 sectionGray'>
-      <div className='maxContainer paddingContainer flexBetween flex-col gap-12'>
+      <motion.div
+        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+        transition={{ duration: 0.5 }} className='maxContainer paddingContainer flexBetween flex-col gap-12'>
         <div className='flexBetween flex-col max-w-[1000px] w-full'>
           <h2 className='bold-32 mb-4 text-center lg:bold-44 mt-8'>
             Alguns <span className='text-green-100'>
@@ -29,7 +32,7 @@ const Customers = () => {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

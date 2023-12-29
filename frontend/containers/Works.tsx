@@ -9,8 +9,8 @@ const Works = () => {
   return (
     <section className='py-40 w-full sectionGray' id='works'>
       <motion.div
-        // whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
-        // transition={{ duration: 0.5 }} 
+        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+        transition={{ duration: 0.5 }} 
         className='flexCenter flex-col maxContainer paddingContainer gap-20'>
         <div className='flexBetween flex-col max-w-[1000px] w-full'>
           <h3 className='bold-20 text-center lg:bold-24'>Alguns Trabalhos</h3>

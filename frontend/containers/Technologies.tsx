@@ -3,6 +3,7 @@
 import TechnologieCard from '@/components/TechnologieCard';
 import React, { useState } from 'react';
 import { TECHNOLOGIES_STAGE } from '@/constants';
+import { motion } from 'framer-motion';
 
 const Technologies = () => {
     const [hoveredTitle, setHoveredTitle] = useState<string | null>(null);
@@ -10,7 +11,9 @@ const Technologies = () => {
 
     return (
         <section className='w-full py-40'>
-            <div className='maxContainer paddingContainer flexBetween flex-col lg:flex-row '>
+            <motion.div
+                whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+                transition={{ duration: 0.5 }} className='maxContainer paddingContainer flexBetween flex-col lg:flex-row '>
                 <div className='mb-20 lg:mb-0'>
                     <h2 className='bold-32 mb-4 text-center lg:text-start lg:bold-44'>
                         <span className='text-green-100'>Tecnologias</span> que usamos
@@ -23,7 +26,7 @@ const Technologies = () => {
                         setHoveredDescription(description);
                     }}
                 />
-            </div>
+            </motion.div>
         </section>
     );
 };

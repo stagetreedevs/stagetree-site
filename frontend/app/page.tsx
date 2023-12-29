@@ -1,3 +1,4 @@
+import ButtonContact from "@/components/ButtonContact";
 import About from "@/containers/About";
 import CTA from "@/containers/CTA";
 import Contact from "@/containers/Contact";
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      <ButtonContact/>
       <main>
         <Hero />
         <About/>

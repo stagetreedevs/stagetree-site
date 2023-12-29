@@ -9,8 +9,8 @@ const About = () => {
   return (
     <section className='py-40 w-full sectionGray' id='about'>
       <motion.div
-        // whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
-        // transition={{ duration: 0.5 }}
+        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+        transition={{ duration: 0.5 }}
         className='maxContainer paddingContainer flexBetween gap-20 lg:flex-row flex-col'
       >
         <div className='w-full max-w-[600px] flexCenter flex-col lg:items-start'>
