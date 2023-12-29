@@ -1,5 +1,5 @@
-import testimonials from "./testimonials"
+import customers from './customers'
 import works from "./works"
-import services from "./services"
+import technologies from './technologies'
 
-export const schemaTypes = [testimonials, works, services]
+export const schemaTypes = [works, customers, technologies]

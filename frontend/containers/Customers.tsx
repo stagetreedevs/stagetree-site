@@ -18,12 +18,15 @@ const Customers = () => {
         </div>
         <div className='grid grid-cols-2 gap-8 lg:grid-cols-4'>
           {COUSTOMERS_LOGO.map((image) => (
-            <Image
-              src={image.image}
-              alt={image.title}
-              width={183}
-              height={85}
-            />
+            <div className='flexCenter'>
+              <Image
+                src={image.image}
+                alt={image.title}
+                width={183}
+                height={85}
+              />
+
+            </div>
           ))}
         </div>
       </div>

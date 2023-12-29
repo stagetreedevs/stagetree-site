@@ -16,7 +16,7 @@ const Footer = () => {
               height={73}
               alt='StageTree'
             />
-            <p className='regular-18 text-gray-20  text-center lg:text-start'>Somos uma empresa de tecnologia especializada na criação de sistemas para web, sites e aplicações, com foco nas pessoas e na evolução.</p>
+            <p className='regular-18 text-gray-20  text-center lg:text-start'>Somos uma empresa de tecnologia especializada na criação de aplicativos, sistemas web, web design. Focamos na evolução do seu negócio.</p>
           </div>
             <ul className="flex gap-3">
               {SOCIAL_STAGE.map((link) => (

@@ -35,6 +35,16 @@ export const WORKS_CARD_INFO = [
             'MOBILE',
         ],
     },
+    {
+        image: '/logbook.png',
+        title: 'LogBook',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing.',
+        tags: [
+            'UI',
+            'WEB',
+            'SISTEMA',
+        ],
+    },
 ]
 
 export const TECHNOLOGIES_STAGE = [
@@ -58,32 +68,60 @@ export const TECHNOLOGIES_STAGE = [
         description: 'lorem ipsum bla bla bla',
         image: '/technologies/node.png'
     },
+    {
+        title: 'Next',
+        description: 'lorem ipsum bla bla bla',
+        image: '/technologies/next.png'
+    },
+    {
+        title: 'Python',
+        description: 'lorem ipsum bla bla bla',
+        image: '/technologies/python.png'
+    },
+    {
+        title: 'Nest',
+        description: 'lorem ipsum bla bla bla',
+        image: '/technologies/nest.png'
+    },
+    {
+        title: 'Angular',
+        description: 'lorem ipsum bla bla bla',
+        image: '/technologies/angular.png'
+    },
 ]
 
 export const COUSTOMERS_LOGO = [
     {
-        title: 'Logo1',
-        image: '/logomockup.png'
+        title: 'convet',
+        image: '/customers/convet.png'
     },
     {
-        title: 'Logo2',
-        image: '/logomockup.png'
+        title: 'greenish',
+        image: '/customers/greenish.png'
     },
     {
-        title: 'Logo3',
-        image: '/logomockup.png'
+        title: 'multiplica',
+        image: '/customers/multiplica.png'
     },
     {
-        title: 'Logo4',
-        image: '/logomockup.png'
+        title: 'newtime',
+        image: '/customers/newtime.png'
     },
     {
-        title: 'Logo5',
-        image: '/logomockup.png'
+        title: 'nova',
+        image: '/customers/nova.png'
     },
     {
-        title: 'Logo6',
-        image: '/logomockup.png'
+        title: 'qualitare',
+        image: '/customers/qualitare.png'
+    },
+    {
+        title: 'raio',
+        image: '/customers/raio.png'
+    },
+    {
+        title: 'rea',
+        image: '/customers/rea.png'
     },
 ]
 

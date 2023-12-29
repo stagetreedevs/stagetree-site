@@ -1,10 +1,16 @@
+'use client'
+
 import ServiceCard from '@/components/ServiceCard'
 import React from 'react'
+import { motion } from 'framer-motion';
 
 const Services = () => {
   return (
     <section className='maxContainer paddingContainer py-40' id='services'>
-      <div className='flexBetween flex-col'>
+      <motion.div
+        // whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+        // transition={{ duration: 0.5 }}
+        className='flexBetween flex-col'>
         <div className='flexBetween flex-col max-w-[1000px] w-full'>
           <h3 className='bold-20 text-center lg:bold-24'>Inovação</h3>
           <h2 className='bold-32 mb-4 text-center lg:bold-44 mt-8'>
@@ -29,7 +35,7 @@ const Services = () => {
             description='Desenvolvemos sistemas robustos e escaláveis adaptados às suas necessidades específicas.'
           />
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }
