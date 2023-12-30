@@ -81,14 +81,12 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
                 <div className='mt-8'>
                     <div className='gap-2 flexCenter'>
                         <button className=" bg-green-100 p-3 rounded-[100px] shadow-md hover:bg-blue-100 transition-all disabled:opacity-40"
-                            style={{ opacity: !emblaApi?.canScrollPrev() ? '50%' : '100%' }}
                             onClick={scrollPrev}
                             disabled={prevBtnDisabled}
                         >
                             <HiArrowLeft color='#eeeeee' />
                         </button>
                         <button className=" bg-green-100 p-3 rounded-[100px] shadow-md hover:bg-blue-100 transition-all disabled:opacity-40"
-                            style={{ opacity: !emblaApi?.canScrollNext() ? '50%' : '100%' }}
                             onClick={scrollNext}
                             disabled={nextBtnDisabled}
                         >

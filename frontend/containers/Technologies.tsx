@@ -20,12 +20,14 @@ const Technologies = () => {
                     </h2>
                     <p className='text-center lg:text-start'>{hoveredDescription || 'São apenas ferramentas que usamos para criar experiências incríveis e valiosas.'}</p>
                 </div>
-                <TechnologieCard
-                    onHover={(title, description) => {
-                        setHoveredTitle(title);
-                        setHoveredDescription(description);
-                    }}
-                />
+                <div className='grid grid-cols-2 gap-4 md:grid-cols-4'>
+                    <TechnologieCard
+                        onHover={(title, description) => {
+                            setHoveredTitle(title);
+                            setHoveredDescription(description);
+                        }}
+                    />
+                </div>
             </motion.div>
         </section>
     );

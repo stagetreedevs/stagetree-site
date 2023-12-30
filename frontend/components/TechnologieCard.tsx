@@ -12,13 +12,12 @@ const TechnologieCard: React.FC<TechnologieCardProps> = ({ onHover }) => {
     const [hoveredTechnology, setHoveredTechnology] = useState<number | null>(null);
 
     return (
-        <div className='grid grid-cols-4 gap-4'>
+        <>
             {TECHNOLOGIES_STAGE.map((technology, index) => (
                 <div
                     key={index}
-                    className={`w-[100px] h-[100px] rounded-lg border-3 flexCenter transition-all delay-100 hover:shadow-lg hover:border-green-100 ${
-                        hoveredTechnology === index ? 'hovered' : ''
-                    }`}
+                    className={`w-[100px] h-[100px] rounded-lg border-3 flexCenter transition-all delay-100 hover:shadow-lg hover:border-green-100 ${hoveredTechnology === index ? 'hovered' : ''
+                        }`}
                     onMouseEnter={() => {
                         setHoveredTechnology(index);
                         onHover(technology.title, technology.description);
@@ -31,7 +30,7 @@ const TechnologieCard: React.FC<TechnologieCardProps> = ({ onHover }) => {
                     <Image src={technology.image} alt={technology.title} width={80} height={80} />
                 </div>
             ))}
-        </div>
+        </>
     );
 };
 

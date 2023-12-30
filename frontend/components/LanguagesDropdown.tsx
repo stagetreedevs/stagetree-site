@@ -23,26 +23,26 @@ export default function App() {
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Image src={selectedImage} width={24} height={24} alt="language" className="cursor-pointer"/>
+        <Image src={selectedImage} width={32} height={32} alt="language" className="cursor-pointer"/>
       </DropdownTrigger>
       <DropdownMenu variant="faded" aria-label="Dropdown menu with icons">
         <DropdownItem
           key="portuguese"
-          startContent={<Image src='/pt_icon.png' width={24} height={24} alt="language"/>}
+          startContent={<Image src='/pt_icon.png' width={32} height={32} alt="language"/>}
           onClick={() => handleSelection('portuguese')}
         >
           Português
         </DropdownItem>
         <DropdownItem
           key="english"
-          startContent={<Image src='/us_icon.png' width={24} height={24} alt="language"/>}
+          startContent={<Image src='/us_icon.png' width={32} height={32} alt="language"/>}
           onClick={() => handleSelection('english')}
         >
           English
         </DropdownItem>
         <DropdownItem
           key="spanish"
-          startContent={<Image src='/sp_icon.png' width={24} height={24} alt="language"/>}
+          startContent={<Image src='/sp_icon.png' width={32} height={32} alt="language"/>}
           onClick={() => handleSelection('spanish')}
         >
           Spanish
