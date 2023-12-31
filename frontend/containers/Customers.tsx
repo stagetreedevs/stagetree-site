@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion';
-import { urlFor, client } from '@/client';
+import { urlFor, client } from '@/app/client';
 import { useEffect, useState } from 'react';
 
 

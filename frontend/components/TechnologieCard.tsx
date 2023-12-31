@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, MouseEventHandler } from 'react';
 import Image from 'next/image';
-import { urlFor, client } from '@/client';
+import { urlFor, client } from '@/app/client';
 
 type TechnologieCardProps = {
     onHover: (title: string | null, description: string | null) => void;

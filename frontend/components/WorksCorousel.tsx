@@ -3,7 +3,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { HiChevronRight, HiArrowLeft, HiArrowRight } from 'react-icons/hi';
-import { urlFor, client } from '@/client'
+import { urlFor, client } from '@/app/client'
 
 type WorksCardInfo = {
     title: string;
