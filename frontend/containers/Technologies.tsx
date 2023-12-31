@@ -2,7 +2,6 @@
 
 import TechnologieCard from '@/components/TechnologieCard';
 import React, { useState } from 'react';
-import { TECHNOLOGIES_STAGE } from '@/constants';
 import { motion } from 'framer-motion';
 
 const Technologies = () => {
