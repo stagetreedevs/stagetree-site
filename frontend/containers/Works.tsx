@@ -1,11 +1,34 @@
 'use client'
 
-import React from 'react'
-import { WORKS_CARD_INFO } from '@/constants';
+import React, {useState, useEffect} from 'react'
 import { motion } from 'framer-motion';
 import { WorksCarousel } from '@/components/WorksCorousel';
+import { client } from '@/client';
+
+type WorksCardInfo = {
+  title: string;
+  description: string;
+  projectLink: string;
+  imgUrl: string;
+  tags: string[];
+};
+
 
 const Works = () => {
+  const [worksData, setWorksData] = useState<WorksCardInfo[]>([]);
+
+  useEffect(() => {
+    const query = '*[_type == "works"]'; // Certifique-se de que o tipo corresponde ao nome definido no seu schema do Sanity
+
+    client.fetch(query)
+      .then((data: WorksCardInfo[]) => {
+        setWorksData(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching works data:', error);
+      });
+  }, []);
+
   return (
     <section className='py-40 w-full sectionGray' id='works'>
       <motion.div
@@ -20,11 +43,11 @@ const Works = () => {
           <p className='regular-16 text-gray-20 text-center lg:regular-18'>Explore nosso portfólio de projetos de sucesso.</p>
         </div>
         <div className='w-full'>
-          <WorksCarousel worksData={WORKS_CARD_INFO} />
+          <WorksCarousel worksData={worksData} />
         </div>
       </motion.div>
     </section>
   )
 }
 
-export default Works
+export default Works;

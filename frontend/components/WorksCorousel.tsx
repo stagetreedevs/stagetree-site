@@ -3,11 +3,13 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { HiChevronRight, HiArrowLeft, HiArrowRight } from 'react-icons/hi';
+import { urlFor, client } from '@/client'
 
 type WorksCardInfo = {
-    image: string;
     title: string;
     description: string;
+    projectLink: string;
+    imgUrl: string;
     tags: string[];
 };
 
@@ -15,36 +17,35 @@ type WorksSwiperProps = {
     worksData: WorksCardInfo[];
 };
 
-
 export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
     const [emblaRef, emblaApi] = useEmblaCarousel({
         slidesToScroll: 2,
-    })
+    });
     const scrollPrev = useCallback(
         () => emblaApi && emblaApi.scrollPrev(),
         [emblaApi]
-    )
+    );
     const scrollNext = useCallback(
         () => emblaApi && emblaApi.scrollNext(),
         [emblaApi]
-    )
+    );
 
-    const [prevBtnDisabled, setPrevBtnDisabled] = useState(true)
-    const [nextBtnDisabled, setNextBtnDisabled] = useState(true)
+    const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
+    const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
 
     const onSelect = useCallback((emblaApi: any) => {
-        setPrevBtnDisabled(!emblaApi.canScrollPrev())
-        setNextBtnDisabled(!emblaApi.canScrollNext())
-    }, [])
+        setPrevBtnDisabled(!emblaApi.canScrollPrev());
+        setNextBtnDisabled(!emblaApi.canScrollNext());
+    }, []);
 
     useEffect(() => {
-        if (!emblaApi) return
+        if (!emblaApi) return;
 
-        onSelect(emblaApi)
+        onSelect(emblaApi);
 
-        emblaApi.on('reInit', onSelect)
-        emblaApi.on('select', onSelect)
-    }, [emblaApi, onSelect])
+        emblaApi.on('reInit', onSelect);
+        emblaApi.on('select', onSelect);
+    }, [emblaApi, onSelect]);
 
     return (
         <div style={{ overflow: 'hidden', width: '100%' }}>
@@ -54,7 +55,7 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
                         <div key={index} className="embla__slide flex-[0_0_calc(50%_-_32px)]">
                             <div className='relative'>
                                 <Image
-                                    src={work.image}
+                                    src={urlFor(work.imgUrl).url()}
                                     width={592}
                                     height={400}
                                     alt={work.title}
@@ -69,7 +70,7 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
                                         </div>
                                     ))}
                                 </ul>
-                                <Link href='/' className='text-green-100 flex flex-row flexStart bold-16'>
+                                <Link href={work.projectLink} className='text-green-100 flex flex-row flexStart bold-16' target='_blank'>
                                     Confira o projeto
                                     <HiChevronRight color="#05F29B" size={20} />
                                 </Link>
@@ -80,13 +81,15 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
 
                 <div className='mt-8'>
                     <div className='gap-2 flexCenter'>
-                        <button className=" bg-green-100 p-3 rounded-[100px] shadow-md hover:bg-blue-100 transition-all disabled:opacity-40"
+                        <button
+                            className=" bg-green-100 p-3 rounded-[100px] shadow-md hover:bg-blue-100 transition-all disabled:opacity-40"
                             onClick={scrollPrev}
                             disabled={prevBtnDisabled}
                         >
                             <HiArrowLeft color='#eeeeee' />
                         </button>
-                        <button className=" bg-green-100 p-3 rounded-[100px] shadow-md hover:bg-blue-100 transition-all disabled:opacity-40"
+                        <button
+                            className=" bg-green-100 p-3 rounded-[100px] shadow-md hover:bg-blue-100 transition-all disabled:opacity-40"
                             onClick={scrollNext}
                             disabled={nextBtnDisabled}
                         >
@@ -96,5 +99,5 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
