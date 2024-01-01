@@ -14,7 +14,7 @@ const Hero = () => {
             width={270}
             height={427}
             alt="astronaut"
-            className='absolute z-[3] w-40 lg:w-[270px]'
+            className='absolute z-[3] w-40 lg:w-[270px] hero-image'
           />
           <div className="crimson-ball absolute z-[2]"/> 
           <div className="yellow-ball absolute right-0 bottom-0 z-[3]"/>

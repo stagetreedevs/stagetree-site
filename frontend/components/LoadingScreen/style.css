@@ -1,0 +1,105 @@
+.loadscreen {
+    width: 100%;
+    height: 100vh;
+    background-color: #eeeeee;
+
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+svg #green-vector {
+    fill: transparent;
+
+    animation: logo_varia_green 8s ease infinite alternate;
+} 
+
+svg #green-letter {
+    fill: transparent;
+
+    animation: logo_varia_green 8s ease infinite alternate;
+}
+
+@keyframes logo_varia_green{
+    0% {
+        stroke-width: 0;
+        fill: transparent;
+        stroke-dasharray: 1 100;
+    }
+
+    25% {
+        stroke-width: 1;
+        fill: transparent;
+        stroke-dasharray: 100 0;
+    }
+
+    60%,
+    100% {
+        stroke-width: 0.3;
+        fill: #05F29B;
+    }
+}
+
+svg #blue-vector{
+    fill: transparent;
+
+    animation: logo_varia_blue 8s ease infinite alternate;
+} 
+svg #blue-letter{
+    fill: transparent;
+
+    animation: logo_varia_blue 8s ease infinite alternate;
+} 
+
+@keyframes logo_varia_blue{
+    0% {
+        stroke-width: 0;
+        fill: transparent;
+        stroke-dasharray: 1 100;
+    }
+
+    25% {
+        stroke-width: 1;
+        fill: transparent;
+        stroke-dasharray: 100 0;
+    }
+
+    60%,
+    100% {
+        stroke-width: 0.3;
+        fill: #010326;
+    }
+}
+
+
+.loadscreen-ball {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: #DF2935;
+    border-radius: 50%;
+    filter: blur(300px);
+
+    animation: scale 6s ease infinite alternate;
+}
+
+@keyframes scale {
+    0% {
+        scale: 0;
+    }
+
+    25% {
+        scale: 0.5;
+    }
+
+    60%,
+    100% {
+        scale: 1;
+    }
+}

@@ -137,7 +137,7 @@ p {
   border-radius: 500px;
   opacity: 0.3;
   background: #F25757;
-  filter: blur(200px);
+  filter: blur(150px);
 }
 
 .yellow-ball {
@@ -146,8 +146,24 @@ p {
   border-radius: 350px;
   opacity: 0.3;
   background: #F2E863;
-  filter: blur(100px);
+  filter: blur(150px);
   top: 0;
   right: 100px;
   position: absolute;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.hero-image {
+  animation: float 5s ease-in-out infinite;
 }

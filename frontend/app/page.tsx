@@ -1,4 +1,5 @@
 import ButtonContact from "@/components/ButtonContact";
+import LoadScreen from "@/components/LoadingScreen";
 import About from "@/containers/About";
 import CTA from "@/containers/CTA";
 import Contact from "@/containers/Contact";
@@ -13,6 +14,7 @@ import Works from "@/containers/Works";
 export default function Home() {
   return (
     <>
+      <LoadScreen/>
       <Navbar />
       <ButtonContact />
       <main>
