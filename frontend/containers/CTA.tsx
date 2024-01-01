@@ -36,6 +36,22 @@ const CTA = () => {
           className='absolute right-[10px] top-[160px]'
         />
       </div>
+      <div>
+      <Image
+          src='/assets/ball-md.svg'
+          width={56}
+          height={56}
+          alt='ball-md'
+          className='absolute left-[50px] bottom-[40px]'
+        />
+        <Image
+          src='/assets/ball-sm.svg'
+          width={32}
+          height={32}
+          alt='ball-sm'
+          className='absolute left-[10px] bottom-[80px]'
+        />
+      </div>
     </motion.div>
   )
 }

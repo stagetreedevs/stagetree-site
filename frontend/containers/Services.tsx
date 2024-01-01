@@ -3,10 +3,11 @@
 import ServiceCard from '@/components/ServiceCard'
 import React from 'react'
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const Services = () => {
   return (
-    <section className='maxContainer paddingContainer py-40' id='services'>
+    <section className='maxContainer paddingContainer py-40 relative' id='services'>
       <motion.div
         whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
         transition={{ duration: 0.5 }}
@@ -35,7 +36,22 @@ const Services = () => {
             description='Desenvolvemos sistemas robustos e escaláveis adaptados às suas necessidades específicas.'
           />
         </div>
+      <Image
+          src='/assets/triangles.svg'
+          width={96}
+          height={96}
+          alt='ball-lg'
+          className='absolute right-[-80px] top-[60px] hidden lg:block'
+        />
+      <Image
+          src='/assets/triangles.svg'
+          width={96}
+          height={96}
+          alt='ball-lg'
+          className='absolute left-[-80px] bottom-[60px] hidden lg:block'
+        />
       </motion.div>
+
     </section>
   )
 }
