@@ -29,11 +29,11 @@ const Contact = () => {
             <h3 className='bold-24 mt-8'>{t('title_email')}</h3>
             <p className='regular-18 text-gray-50 mb-8 mt-4 text-center lg:text-start'>{t('decription_email')}</p>
             <Link
-              href='mailto: contato@stagetree.com'
+              href='mailto: stagetree.ti@gmail.com'
               target='_blank'
               className='underline text-gray-50 hover:text-green-100 transition-all'
             >
-              contato@stagetree.com
+              stagetree.ti@gmail.com
             </Link>
           </motion.div>
           <motion.div
