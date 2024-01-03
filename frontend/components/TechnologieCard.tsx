@@ -3,6 +3,7 @@
 import React, { useState, useEffect, MouseEventHandler } from 'react';
 import Image from 'next/image';
 import { urlFor, client } from '@/app/client';
+import { useParams } from 'next/navigation';
 
 type TechnologieCardProps = {
     onHover: (title: string | null, description: string | null) => void;
@@ -10,13 +11,19 @@ type TechnologieCardProps = {
 
 interface Technology {
     title: string;
-    description: string;
+    descriptionPT: string;
+    descriptionES: string;
+    descriptionEN: string;
     imgUrl: string
 }
 
 const TechnologieCard: React.FC<TechnologieCardProps> = ({ onHover }) => {
     const [hoveredTechnology, setHoveredTechnology] = useState<number | null>(null);
     const [technologies, setTechnologies] = useState<Technology[]>([]);
+    const params = useParams();
+
+    const currentLocale = String(params.locale).toUpperCase()
+const selectedDescription = `description${currentLocale}` as 'descriptionPT' | 'descriptionES' | 'descriptionEN'
 
     useEffect(() => {
         const query = '*[_type == "technologies"]'; // Corrigir para "technologies"
@@ -40,7 +47,7 @@ const TechnologieCard: React.FC<TechnologieCardProps> = ({ onHover }) => {
                     className={`w-[100px] h-[100px] rounded-lg border-3 flexCenter transition-all delay-100 hover:shadow-lg p-5 hover:border-green-100 ${hoveredTechnology === index ? 'hovered' : ''}`}
                     onMouseEnter={() => {
                         setHoveredTechnology(index);
-                        onHover(technology.title, technology.description);
+                        onHover(technology.title, technology[selectedDescription]);
                     }}
                     onMouseLeave={() => {
                         setHoveredTechnology(null);

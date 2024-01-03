@@ -4,10 +4,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { HiChevronRight, HiArrowLeft, HiArrowRight } from 'react-icons/hi';
 import { urlFor, client } from '@/app/client'
+import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 
 type WorksCardInfo = {
     title: string;
-    description: string;
+    descriptionPT: string;
+    descriptionES: string;
+    descriptionEN: string;
     projectLink: string;
     imgUrl: string;
     tags: string[];
@@ -18,6 +22,11 @@ type WorksSwiperProps = {
 };
 
 export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
+    const t = useTranslations();
+    const params = useParams();
+
+    console.log(params)
+
     const [emblaRef, emblaApi] = useEmblaCarousel({
         slidesToScroll: 2,
     });
@@ -47,6 +56,9 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
         emblaApi.on('select', onSelect);
     }, [emblaApi, onSelect]);
 
+    const currentLocale = String(params.locale).toUpperCase()
+    const selectedDescription = `description${currentLocale}` as 'descriptionPT' | 'descriptionES' | 'descriptionEN'
+    
     return (
         <div style={{ overflow: 'hidden', width: '100%' }}>
             <div className="embla overflow-hidden h-full" ref={emblaRef}>
@@ -62,7 +74,7 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
                                     className='mb-4 rounded-lg border-blue-100 border-1 hover:shadow-lg transition-all'
                                 />
                                 <h3 className='bold-24'>{work.title}</h3>
-                                <p className='regular-18 text-gray-20 mb-4'>{work.description}</p>
+                                <p className='regular-18 text-gray-20 mb-4'>{work[selectedDescription]}</p>
                                 <ul className="flexStart gap-2 mb-5">
                                     {work.tags.map((tag, tagIndex) => (
                                         <div key={tagIndex} className="regular-16 bg-gray-200 px-4 py-1">

@@ -30,6 +30,7 @@ body {
   background-color: #f3f3f3;
   color: #010326;
   position: relative;
+  overflow-x: hidden;
 }
 
 .sectionGray {

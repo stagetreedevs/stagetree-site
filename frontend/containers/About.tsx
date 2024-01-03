@@ -1,10 +1,10 @@
 'use client'
 
-import Button from '@/components/Button'
-import Image from 'next/image'
-import React from 'react'
+import Button from '@/components/Button';
+import Image from 'next/image';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl';
 
 const About = () => {
   const t = useTranslations("About");
