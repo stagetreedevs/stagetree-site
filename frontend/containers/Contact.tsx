@@ -46,11 +46,11 @@ const Contact = () => {
             <h3 className='bold-24 mt-8'>{t('title_phone')}</h3>
             <p className='regular-18 text-gray-50 mb-8 mt-4 text-center lg:text-start'>{t('description_phone')}</p>
             <Link
-              href='tel: contato@stagetree.com'
+              href='tel: +5585999670502'
               target='_blank'
               className='underline text-gray-50 hover:text-green-100 transition-all'
             >
-              +55 (85) 99999-9999
+              +55 (85) 9 9967-0502
             </Link>
           </motion.div>
           <motion.div

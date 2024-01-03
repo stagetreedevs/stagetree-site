@@ -9,8 +9,18 @@ export default {
             type: 'string',
         },
         {
-            name: 'description',
-            title: 'Description',
+            name: 'descriptionPT',
+            title: 'DescriptionPT',
+            type: 'string',
+        },
+        {
+            name: 'descriptionES',
+            title: 'DescriptionES',
+            type: 'string',
+        },
+        {
+            name: 'descriptionEN',
+            title: 'DescriptionEN',
             type: 'string',
         },
         {
