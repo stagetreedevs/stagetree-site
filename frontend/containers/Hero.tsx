@@ -17,9 +17,9 @@ const Hero = () => {
           <Image
             src="/astronaut.png"
             width={270}
-            height={427}
+            height={458}
             alt="astronaut"
-            className='absolute z-[4] w-40 lg:w-[270px] hero-image'
+            className='absolute z-[4] w-40 lg:w-[300px] hero-image'
           />
           <div className="crimson-ball absolute z-[2]" />
           <div className="yellow-ball absolute right-0 bottom-0 z-[3]" />
