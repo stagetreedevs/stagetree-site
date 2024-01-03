@@ -22,7 +22,7 @@ const Services = () => {
           </h2>
           <p className='regular-16 text-gray-20 text-center lg:regular-18'>{t('description')}</p>
         </div>
-        <div className='flexBetween flex-col lg:flex-row gap-12 mt-16'>
+        <div className='flexBetween flex-col md:flex-row gap-12 mt-16'>
           <ServiceCard
             title={t('card1_title')}
             image='/webdesign.svg'
@@ -39,21 +39,21 @@ const Services = () => {
             description={t('card3_description')}
           />
         </div>
-      <Image
-          src='/assets/triangles.svg'
-          width={96}
-          height={96}
-          alt='ball-lg'
-          className='absolute right-[-80px] top-[60px] hidden lg:block'
-        />
-      <Image
-          src='/assets/triangles.svg'
-          width={96}
-          height={96}
-          alt='ball-lg'
-          className='absolute left-[-80px] bottom-[60px] hidden lg:block'
-        />
       </motion.div>
+      <Image
+          src='/assets/triangles.svg'
+          width={96}
+          height={96}
+          alt='ball-lg'
+          className='absolute right-0 top-[60px] hidden lg:block'
+        />
+      <Image
+          src='/assets/triangles.svg'
+          width={96}
+          height={96}
+          alt='ball-lg'
+          className='absolute left-0 bottom-[60px] hidden lg:block'
+        />
 
     </section>
   )

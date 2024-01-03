@@ -10,13 +10,13 @@ const CTA = () => {
 
   return (
     <motion.div
-        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
-        transition={{ duration: 0.5 }} className='w-full py-40 relative'>
+      whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+      transition={{ duration: 0.5 }} className='w-full py-40 relative'>
       <div className='maxContainer paddingContainer flexBetween flex-col lg:flex-row gap-16'>
         <h2 className='bold-32 mb-6 text-center lg:text-start lg:bold-44'><span className='text-green-100'>{t('title1')}</span>{t('title2')}</h2>
         <p className='regular-16 text-gray-20 text-center lg:text-start lg:regular-18 mb-6 w-full max-w-[592px]'>{t('description')}</p>
       </div>
-      <div className=''>
+      <div className='hidden md:block'>
         <Image
           src='/assets/ball-lg.svg'
           width={96}
@@ -39,8 +39,8 @@ const CTA = () => {
           className='absolute right-[10px] top-[160px]'
         />
       </div>
-      <div>
-      <Image
+      <div className='hidden md:block'>
+        <Image
           src='/assets/ball-md.svg'
           width={56}
           height={56}

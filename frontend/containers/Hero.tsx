@@ -23,19 +23,12 @@ const Hero = () => {
           />
           <div className="crimson-ball absolute z-[2]" />
           <div className="yellow-ball absolute right-0 bottom-0 z-[3]" />
-        </div>
-        <div className='hidden lg:block'>
-          <Image
-            src="/assets/space.png"
-            width={784}
-            height={720}
-            alt="space"
-            className='absolute z-[3] right-[-106px] bottom-0'
-          />
-          <div className="green-planet absolute z-[4]" />
-          <div className="yellow-planet absolute right-96 bottom-9 z-[3]" />
+        <div className=''>
+          <div className="green-planet absolute z-[4] left-20" />
+          <div className="yellow-planet absolute right-96 bottom-0 z-[3]" />
           <div className="crimson-planet absolute right-28 bottom-32 z-[3]" />
-          <div className="blue-planet absolute right-[-80px] top-40 z-[3]" />
+          <div className="blue-planet absolute right-10 top-40 z-[3]" />
+        </div>
         </div>
         <div className='absolute w-[2px] h-10 left-[50%] bg-blue-100 opacity-20 bottom-0 z-20 mb-[-20px] rounded-lg'>
         </div>

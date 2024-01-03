@@ -170,8 +170,8 @@ p {
 }
 
 .green-planet {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   border-radius: 20px;
   filter: blur(5px);
   background-color: #43C6AC;
@@ -186,10 +186,10 @@ p {
   animation: scale_planet 4s ease-in-out infinite alternate;
 }
 .crimson-planet {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   border-radius: 20px;
-  filter: blur(10px);
+  filter: blur(5px);
   background-color: #F25757;
   animation: scale_planet 6s ease-in-out infinite alternate;
 }
