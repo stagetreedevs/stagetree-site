@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from "react";
 import { HiMenu, HiX } from 'react-icons/hi';
+import { useTranslations } from 'next-intl';
 
 const Navbar = () => {
 
@@ -15,6 +16,8 @@ const Navbar = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   }
+
+  const t = useTranslations('Navbar')
 
   return (
     <nav className=' w-full border-b-2 fixed z-20 glassMorphism'>
@@ -31,14 +34,14 @@ const Navbar = () => {
           <ul className="flex gap-3">
             {NAV_LINKS.map((link) => (
               <Link href={link.href} key={link.key} className="bold-16 hover:text-green-100">
-                {link.label}
+                {t(link.label)}
               </Link>
             ))}
           </ul>
 
           <Button
             type='button'
-            title='Entre em Contato'
+            title={t('contact')}
             variant='Annotation'
           />
 
@@ -73,7 +76,7 @@ const Navbar = () => {
               <ul className="flex flex-col gap-3 mt-5">
                 {NAV_LINKS.map((link) => (
                   <Link href={link.href} key={link.key} className="bold-16 hover:text-green-100">
-                    {link.label}
+                    {t(link.label)}
                   </Link>
                 ))}
               </ul>

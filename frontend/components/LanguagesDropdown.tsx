@@ -1,51 +1,48 @@
 'use client'
 
-import React, { useState } from "react";
-import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem} from "@nextui-org/react";
+import React from "react";
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
 import Image from "next/image";
+import { Link, usePathname, useRouter } from "@/navigation";
+
+import { HiOutlineTranslate } from "react-icons/hi";
 
 export default function App() {
-  const [selectedImage, setSelectedImage] = useState('/pt_icon.png'); // Defina a imagem inicial aqui se desejar
 
-  const handleSelection = (key: string) => {
-    switch(key) {
-      case 'english':
-        setSelectedImage('/us_icon.png');
-        break;
-      case 'spanish':
-        setSelectedImage('/sp_icon.png');
-        break;
-      default:
-        setSelectedImage('/pt_icon.png');
-    }
-  }
+  const pathName = usePathname()
 
   return (
+
     <Dropdown>
       <DropdownTrigger>
-        <Image src={selectedImage} width={32} height={32} alt="language" className="cursor-pointer"/>
+        <button>
+          <HiOutlineTranslate size={24} />
+        </button>
       </DropdownTrigger>
       <DropdownMenu variant="faded" aria-label="Dropdown menu with icons">
         <DropdownItem
           key="portuguese"
-          startContent={<Image src='/pt_icon.png' width={32} height={32} alt="language"/>}
-          onClick={() => handleSelection('portuguese')}
+          startContent={<Image src='/pt_icon.png' width={32} height={32} alt="language" />}
         >
-          Português
+          <Link href={pathName} locale="pt">
+            Português
+          </Link>
         </DropdownItem>
         <DropdownItem
           key="english"
-          startContent={<Image src='/us_icon.png' width={32} height={32} alt="language"/>}
-          onClick={() => handleSelection('english')}
+          startContent={<Image src='/us_icon.png' width={32} height={32} alt="language" />}
         >
-          English
+          <Link href={pathName} locale="en">
+            English
+          </Link>
         </DropdownItem>
         <DropdownItem
           key="spanish"
-          startContent={<Image src='/sp_icon.png' width={32} height={32} alt="language"/>}
-          onClick={() => handleSelection('spanish')}
+          startContent={<Image src='/sp_icon.png' width={32} height={32} alt="language" />}
         >
-          Spanish
+          <Link href={pathName} locale="es">
+            Spanish
+          </Link>
         </DropdownItem>
       </DropdownMenu>
     </Dropdown>

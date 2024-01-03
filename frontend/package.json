@@ -17,7 +17,9 @@
     "framer-motion": "^10.16.16",
     "gsap": "^3.12.4",
     "next": "14.0.4",
+    "next-intl": "^3.4.0",
     "next-sanity": "^7.0.5",
+    "polished": "^4.2.2",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0"

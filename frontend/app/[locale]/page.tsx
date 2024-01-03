@@ -1,3 +1,5 @@
+'use client'
+
 import ButtonContact from "@/components/ButtonContact";
 import LoadScreen from "@/components/LoadingScreen";
 import About from "@/containers/About";
@@ -21,7 +23,6 @@ export default function Home() {
         <Hero />
         <About />
         <Services />
-
         <Works />
         <Technologies />
         <Customers />

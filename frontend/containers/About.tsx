@@ -4,8 +4,10 @@ import Button from '@/components/Button'
 import Image from 'next/image'
 import React from 'react'
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl'
 
 const About = () => {
+  const t = useTranslations("About");
   return (
     <section className='py-40 w-full sectionGray' id='about'>
       <motion.div
@@ -15,14 +17,14 @@ const About = () => {
       >
         <div className='w-full max-w-[600px] flexCenter flex-col lg:items-start'>
           <h2 className='bold-32 mb-6 text-center lg:text-start lg:bold-44'>
-            Colocando os <span className='text-green-100'>cliente em primeiro lugar</span> no desenvolvimento de produtos digitais
+            {t('title')}<span className='text-green-100'>{t('title2')}</span>{t('title3')}
           </h2>
           <p className='regular-16 text-gray-20 text-center lg:text-start lg:regular-18 mb-6'>
-            Na StageTree, acreditamos que a chave para o desenvolvimento de produtos digitais excepcionais está na nossa abordagem que prioriza as pessoas. Ao priorizar as necessidades e experiências de nossos clientes e de seus usuários, criamos soluções que realmente repercutem e entregam resultados excepcionais.
+          {t('description')}
           </p>
           <Button
             type='button'
-            title='Veja nosso LinkedIn'
+            title={t('contact')}
             variant='Arrow'
           />
         </div>

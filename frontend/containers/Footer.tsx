@@ -3,8 +3,10 @@ import Image from 'next/image'
 import Link from 'next/link';
 import React from 'react'
 import { FaLinkedin, FaBehance, FaInstagram } from "react-icons/fa";
+import { useTranslations } from 'next-intl';
 
 const Footer = () => {
+  const t = useTranslations('Footer')
   return (
     <footer className='py-10 w-full'>
       <div className='maxContainer paddingContainer flex-col flexBetween'>
@@ -16,7 +18,7 @@ const Footer = () => {
               height={73}
               alt='StageTree'
             />
-            <p className='regular-18 text-gray-20  text-center lg:text-start'>Somos uma empresa de tecnologia especializada na criação de aplicativos, sistemas web, web design. Focamos na evolução do seu negócio.</p>
+            <p className='regular-18 text-gray-20  text-center lg:text-start'>{t('description')}</p>
           </div>
             <ul className="flex gap-3">
               {SOCIAL_STAGE.map((link) => (
@@ -28,7 +30,7 @@ const Footer = () => {
               ))}
             </ul>
         </div>
-        <p className='regular-12'>© 2023 StageTree. Todos os direitos reservados.</p>
+        <p className='regular-12'>© 2023 StageTree. {t('copyright')}</p>
       </div>
     </footer>
   )

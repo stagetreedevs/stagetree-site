@@ -113,7 +113,7 @@ p {
 }
 
 .glassMorphism {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.332);
   backdrop-filter: blur(5px);
 }
 
@@ -166,4 +166,55 @@ p {
 
 .hero-image {
   animation: float 5s ease-in-out infinite;
+}
+
+.green-planet {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  filter: blur(5px);
+  background-color: #43C6AC;
+  animation: scale_planet 2s ease-in-out infinite alternate;
+}
+.yellow-planet {
+  width: 10px;
+  height: 10px;
+  border-radius: 20px;
+  filter: blur(2px);
+  background-color: #F2E863;
+  animation: scale_planet 4s ease-in-out infinite alternate;
+}
+.crimson-planet {
+  width: 25px;
+  height: 25px;
+  border-radius: 20px;
+  filter: blur(10px);
+  background-color: #F25757;
+  animation: scale_planet 6s ease-in-out infinite alternate;
+}
+.blue-planet {
+  width: 10px;
+  height: 10px;
+  border-radius: 20px;
+  filter: blur(2px);
+  background-color: #6320EE;
+  animation: scale_planet 8s ease-in-out infinite alternate;
+}
+
+@keyframes scale_planet {
+  0% {
+    transform: scale(0.4);
+  }
+
+  25% {
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
 }

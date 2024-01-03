@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion';
 import { urlFor, client } from '@/app/client';
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 
 interface Customers {
@@ -12,6 +13,7 @@ interface Customers {
 }
 
 const Customers = () => {
+  const t = useTranslations('Customers')
 
   const [customers, setCustomers] = useState<Customers[]>([]);
 
@@ -30,11 +32,11 @@ const Customers = () => {
         transition={{ duration: 0.5 }} className='maxContainer paddingContainer flexBetween flex-col gap-12'>
         <div className='flexBetween flex-col max-w-[1000px] w-full'>
           <h2 className='bold-32 mb-4 text-center lg:bold-44 mt-8'>
-            Alguns <span className='text-green-100'>
-              Clientes
+            {t('title1')} <span className='text-green-100'>
+            {t('title2')}
             </span>
           </h2>
-          <p className='regular-16 text-gray-20 text-center lg:regular-18'>Empresas que confiam na Stage Tree para ajudar em seus negócios de TIC.</p>
+          <p className='regular-16 text-gray-20 text-center lg:regular-18'>{t('description')}</p>
         </div>
         <div className='grid grid-cols-2 gap-8 lg:grid-cols-4'>
           {customers.map((customer, key) => (

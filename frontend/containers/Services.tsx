@@ -4,8 +4,11 @@ import ServiceCard from '@/components/ServiceCard'
 import React from 'react'
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl'
 
 const Services = () => {
+  const t = useTranslations("Services");
+
   return (
     <section className='maxContainer paddingContainer py-40 relative' id='services'>
       <motion.div
@@ -13,27 +16,27 @@ const Services = () => {
         transition={{ duration: 0.5 }}
         className='flexBetween flex-col'>
         <div className='flexBetween flex-col max-w-[1000px] w-full'>
-          <h3 className='bold-20 text-center lg:bold-24'>Inovação</h3>
+          <h3 className='bold-20 text-center lg:bold-24'>{t('topic')}</h3>
           <h2 className='bold-32 mb-4 text-center lg:bold-44 mt-8'>
-            Transformando <span className='text-green-100'>ideais</span> em <span className='text-green-100'>soluções</span> digitais poderosas
+          {t('title1')}<span className='text-green-100'>{t('title2')}</span> {t('title3')} <span className='text-green-100'>{t('title4')}</span> {t('title5')}
           </h2>
-          <p className='regular-16 text-gray-20 text-center lg:regular-18'>Na StageTree, nos especializamos em fornecer soluções digitais de primeira linha para o seu negócio. Nossos serviços incluem desenvolvimento de sistemas, criação de aplicativos e design de sites, todos voltados para ajudá-lo a atingir seus objetivos.</p>
+          <p className='regular-16 text-gray-20 text-center lg:regular-18'>{t('description')}</p>
         </div>
         <div className='flexBetween flex-col lg:flex-row gap-12 mt-16'>
           <ServiceCard
-            title="Website Design"
+            title={t('card1_title')}
             image='/webdesign.svg'
-            description='Criamos sites visualmente impressionantes que geram resultados.'
+            description={t('card1_description')}
           />
           <ServiceCard
-            title="App Creation"
+            title={t('card2_title')}
             image='/appcreation.svg'
-            description='Nossa equipe de programadores pode dar vida às suas ideias de aplicativos para seu negócio.'
+            description={t('card2_description')}
           />
           <ServiceCard
-            title="Desenvolvimento de Sistemas"
+            title={t('card3_title')}
             image='/systemdev.svg'
-            description='Desenvolvemos sistemas robustos e escaláveis adaptados às suas necessidades específicas.'
+            description={t('card3_description')}
           />
         </div>
       <Image

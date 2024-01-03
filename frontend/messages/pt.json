@@ -1,0 +1,72 @@
+{
+    "Navbar": {
+        "contact": "Entre em contato",
+        "aboutUs": "Sobre Nós",
+        "services": "Serviços",
+        "works": "Alguns Trabalhos"
+    },
+    "Hero": {
+        "title": "Desenvolvendo produtos digitais de ",
+        "title2": "alto nivel",
+        "title3": "",
+        "description": "Se você precisa de sistemas online, aplicativos ou sites, nossa equipe de especialistas fornecerá soluções excepcionais que geram valor."
+    },
+    "About": {
+        "title": "Colocando os ",
+        "title2": "cliente em primeiro lugar",
+        "title3": " no desenvolvimento de produtos digitais",
+        "description": "Na StageTree, acreditamos que a chave para o desenvolvimento de produtos digitais excepcionais está na nossa abordagem que prioriza as pessoas. Ao priorizar as necessidades e experiências de nossos clientes e de seus usuários, criamos soluções que realmente repercutem e entregam resultados excepcionais.",
+        "contact": "Veja nosso LinkedIn"
+    },
+    "Services": {
+        "topic": "Inovação",
+        "title1": "Transformando ",
+        "title2": "ideais",
+        "title3": " em ",
+        "title4": "soluções",
+        "title5": " digitais poderosas",
+        "description": "Na StageTree, nos especializamos em fornecer soluções digitais de primeira linha para o seu negócio. Nossos serviços incluem desenvolvimento de sistemas, criação de aplicativos e design de sites, todos voltados para ajudá-lo a atingir seus objetivos.",
+        "card1_title": "Website Design",
+        "card1_description": "Criamos sites visualmente impressionantes que geram resultados.",
+        "card2_title": "Criação de Apps",
+        "card2_description": "Nossa equipe de programadores pode dar vida às suas ideias de aplicativos para seu negócio.",
+        "card3_title": "Desenvolvimento de Sistemas",
+        "card4_description": "Desenvolvemos sistemas robustos e escaláveis adaptados às suas necessidades específicas."
+    },
+    "Works": {
+        "topic": "Alguns Trabalhos",
+        "title1": "Criando soluções digitais ",
+        "title2": "impressionantes",
+        "title3": "",
+        "description": "Explore nosso portfólio de projetos de sucesso."
+    },
+    "Technologies": {
+        "title1": "Tecnologias ",
+        "title2": "que usamos",
+        "descriptionFixed": "São apenas ferramentas que usamos para criar experiências incríveis e valiosas."
+    },
+    "Customers": {
+        "title1": "Alguns ",
+        "title2": "clientes",
+        "description": "Empresas que confiam na StageTree para ajudar em seus negócios de TIC."
+    },
+    "CTA": {
+        "title1": "Transformando",
+        "title2": " sua experiência com produtos digitais",
+        "description": "Na StageTree, nos especializamos no desenvolvimento de produtos digitais de última geração que atendem às necessidades do seu negócio. Desde sistemas on-line intuitivos até aplicativos fáceis de usar e sites impressionantes, temos a experiência necessária para dar vida às suas ideias. Contate-nos hoje para discutir seu projeto e levar sua presença digital para o próximo nível."
+    },
+    "Contact": {
+        "title1": "Entre em ",
+        "title2": "contato",
+        "title_email": "Email",
+        "decription_email": "Sinta-se à vontade para entrar em contato conosco caso tenha alguma dúvida.",
+        "title_phone": "Telefone",
+        "description_phone": "Nossa equipe está aqui para ajudá-lo no que pudermos. Também via Whatsapp.",
+        "title_hq": "QG",
+        "description_hq": "Esperamos ver você em breve."
+    },
+    "Footer": {
+        "description": "Somos uma empresa de tecnologia especializada na criação de aplica'tivos, sistemas web, web design. Focamos na evolução do seu negócio.",
+        "copyright": "Todos os direitos reservados."
+    }
+}

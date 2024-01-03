@@ -37,7 +37,7 @@ const TechnologieCard: React.FC<TechnologieCardProps> = ({ onHover }) => {
             {technologies.map((technology, index) => (
                 <div
                     key={index}
-                    className={`w-[100px] h-[100px] rounded-lg border-3 flexCenter transition-all delay-100 hover:shadow-lg hover:border-green-100 ${hoveredTechnology === index ? 'hovered' : ''}`}
+                    className={`w-[100px] h-[100px] rounded-lg border-3 flexCenter transition-all delay-100 hover:shadow-lg p-5 hover:border-green-100 ${hoveredTechnology === index ? 'hovered' : ''}`}
                     onMouseEnter={() => {
                         setHoveredTechnology(index);
                         onHover(technology.title, technology.description);
