@@ -15,7 +15,7 @@ const Hero = () => {
         </div>
         <div className='flexCenter w-[50%] h-full items-start relative'>
           <Image
-            src="/astronaut.png"
+            src="/hero-image.svg"
             width={270}
             height={458}
             alt="astronaut"

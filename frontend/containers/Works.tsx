@@ -9,7 +9,9 @@ import { useTranslations } from 'next-intl'
 
 type WorksCardInfo = {
   title: string;
-  description: string;
+  descriptionPT: string;
+  descriptionES: string;
+  descriptionEN: string;
   projectLink: string;
   imgUrl: string;
   tags: string[];
