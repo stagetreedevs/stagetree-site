@@ -30,7 +30,7 @@ export default function App() {
         </DropdownItem>
         <DropdownItem
           key="english"
-          startContent={<Image src='/un_icon.png' width={32} height={32} alt="language" />}
+          startContent={<Image src='/en_icon.png' width={32} height={32} alt="language" />}
         >
           <Link href={pathName} locale="en">
             English
