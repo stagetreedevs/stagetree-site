@@ -30,7 +30,7 @@ const Navbar = () => {
             alt="Logo"
           />
         </Link>
-        <div className='gap-3 hidden h-full lg:flexCenter'>
+        <div className='gap-5 hidden h-full lg:flexCenter'>
           <ul className="flex gap-5">
             {NAV_LINKS.map((link) => (
               <Link href={link.href} key={link.key} className="bold-16 hover:text-green-100 transition-all">

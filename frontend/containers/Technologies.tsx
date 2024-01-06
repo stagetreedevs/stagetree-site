@@ -16,12 +16,15 @@ const Technologies = () => {
             <motion.div
                 whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
                 transition={{ duration: 0.5 }} className='maxContainer paddingContainer flexBetween flex-col lg:flex-row '>
+
                 <div className='mb-20 lg:mb-0 max-w-[100%] lg:max-w-[50%]'>
+
                     <h2 className='bold-32 mb-4 text-center lg:text-start lg:bold-44'>
                         <span className='text-green-100'>{t('title1')}</span> 
                         {t('title2')}
                     </h2>
-                    <div className='flex-row'>
+
+                    <div className=''>
                         <p className='text-center lg:text-start'>
                             <span className='text-green-100 bold-16'>{hoveredTitle}
                             </span> {hoveredDescription || t('descriptionFixed')}
@@ -29,6 +32,7 @@ const Technologies = () => {
                     </div>
 
                 </div>
+
                 <div className='grid grid-cols-2 gap-4 md:grid-cols-4'>
                     <TechnologieCard
                         onHover={(title, description) => {

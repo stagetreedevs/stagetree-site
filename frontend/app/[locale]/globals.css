@@ -133,25 +133,15 @@ p {
 }
 
 .crimson-ball {
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   border-radius: 500px;
   opacity: 0.3;
   background: #162361;
-  filter: blur(150px);
+  filter: blur(100px);
 }
 
-.yellow-ball {
-  width: 200px;
-  height: 200px;
-  border-radius: 350px;
-  opacity: 0.3;
-  background: #F2E863;
-  filter: blur(150px);
-  top: 0;
-  right: 100px;
-  position: absolute;
-}
+
 
 @keyframes float {
   0% {

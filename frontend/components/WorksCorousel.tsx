@@ -6,6 +6,8 @@ import { HiChevronRight, HiArrowLeft, HiArrowRight } from 'react-icons/hi';
 import { urlFor, client } from '@/app/client'
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import { flushSync } from 'react-dom';
+import Autoplay from 'embla-carousel-autoplay'
 
 type WorksCardInfo = {
     title: string;
@@ -21,6 +23,11 @@ type WorksSwiperProps = {
     worksData: WorksCardInfo[];
 };
 
+const TWEEN_FACTOR = 4.2
+
+const numberWithinRange = (number: number, min: number, max: number): number =>
+    Math.min(Math.max(number, min), max)
+
 export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
     const t = useTranslations();
     const params = useParams();
@@ -28,55 +35,84 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
     console.log(params)
 
     const [emblaRef, emblaApi] = useEmblaCarousel({
-        slidesToScroll: 2,
-    });
-    const scrollPrev = useCallback(
-        () => emblaApi && emblaApi.scrollPrev(),
-        [emblaApi]
-    );
-    const scrollNext = useCallback(
-        () => emblaApi && emblaApi.scrollNext(),
-        [emblaApi]
-    );
+        slidesToScroll: 1,
+        loop: true,
+        
+    }, [Autoplay({delay: 5000})]);
 
-    const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
-    const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
+    const [tweenValues, setTweenValues] = useState<number[]>([])
 
-    const onSelect = useCallback((emblaApi: any) => {
-        setPrevBtnDisabled(!emblaApi.canScrollPrev());
-        setNextBtnDisabled(!emblaApi.canScrollNext());
-    }, []);
+    const onScroll = useCallback(() => {
+        if (!emblaApi) return
+
+        const engine = emblaApi.internalEngine()
+        const scrollProgress = emblaApi.scrollProgress()
+
+        const styles = emblaApi.scrollSnapList().map((scrollSnap, index) => {
+            let diffToTarget = scrollSnap - scrollProgress
+
+            if (engine.options.loop) {
+                engine.slideLooper.loopPoints.forEach((loopItem) => {
+                    const target = loopItem.target()
+                    if (index === loopItem.index && target !== 0) {
+                        const sign = Math.sign(target)
+                        if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress)
+                        if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress)
+                    }
+                })
+            }
+            const tweenValue = 1 - Math.abs(diffToTarget * TWEEN_FACTOR)
+            return numberWithinRange(tweenValue, 0.3, 1)
+        })
+        setTweenValues(styles)
+    }, [emblaApi, setTweenValues])
+
+    console.log(tweenValues)
+
+    // useEffect(() => {
+    //     if (!emblaApi) return;
+
+    //     onSelect(emblaApi);
+
+    //     emblaApi.on('reInit', onSelect);
+    //     emblaApi.on('select', onSelect);
+    // }, [emblaApi, onSelect]);
 
     useEffect(() => {
-        if (!emblaApi) return;
+        if (!emblaApi) return
 
-        onSelect(emblaApi);
+        onScroll()
+        emblaApi.on('scroll', () => {
+            flushSync(() => onScroll())
+        })
 
-        emblaApi.on('reInit', onSelect);
-        emblaApi.on('select', onSelect);
-    }, [emblaApi, onSelect]);
+        emblaApi.on('reInit', onScroll)
+    }, [emblaApi, onScroll])
 
     const currentLocale = String(params.locale).toUpperCase()
     const selectedDescription = `description${currentLocale}` as 'descriptionPT' | 'descriptionES' | 'descriptionEN'
-    
+
     return (
         <div style={{ overflow: 'hidden', width: '100%' }}>
             <div className="embla overflow-hidden h-full" ref={emblaRef}>
-                <div className="embla__container flex w-full h-full gap-8">
+                <div className="embla__container flex w-full h-full">
                     {worksData.map((work, index) => (
-                        <div key={index} className="embla__slide flex-[0_0_calc(50%_-_32px)]">
+                        <div key={index} className="embla__slide flex-[0_0_50%]" style={{
+                            ...(tweenValues.length && { opacity: tweenValues[index] })
+                        }}>
                             <div className='relative'>
                                 <Image
                                     src={urlFor(work.imgUrl).url()}
                                     width={592}
-                                    height={400}
+                                    height={382}
                                     alt={work.title}
                                     className='mb-4 rounded-lg border-gray-400 border-[0.5px] hover:shadow-lg transition-all'
                                 />
+
                                 <h3 className='bold-24'>{work.title}</h3>
                                 <p className='regular-18 text-gray-20 mb-4'>{work[selectedDescription]}</p>
                                 <ul className="flexStart gap-2 mb-5">
-                                    {work.tags.map((tag, tagIndex) => (
+                                    {work.tags?.map((tag, tagIndex) => (
                                         <div key={tagIndex} className="regular-16 bg-gray-200 px-4 py-1">
                                             {tag}
                                         </div>
@@ -91,24 +127,7 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
                     ))}
                 </div>
 
-                <div className='mt-8'>
-                    <div className='gap-2 flexCenter'>
-                        <button
-                            className=" bg-green-100 p-3 rounded-[100px] shadow-md hover:bg-blue-100 transition-all disabled:opacity-40"
-                            onClick={scrollPrev}
-                            disabled={prevBtnDisabled}
-                        >
-                            <HiArrowLeft color='#eeeeee' />
-                        </button>
-                        <button
-                            className=" bg-green-100 p-3 rounded-[100px] shadow-md hover:bg-blue-100 transition-all disabled:opacity-40"
-                            onClick={scrollNext}
-                            disabled={nextBtnDisabled}
-                        >
-                            <HiArrowRight color='#eeeeee' />
-                        </button>
-                    </div>
-                </div>
+
             </div>
         </div>
     );
