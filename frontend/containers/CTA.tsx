@@ -4,6 +4,7 @@ import Image from 'next/image'
 import React from 'react'
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { Button } from '@nextui-org/react';
 
 const CTA = () => {
   const t = useTranslations('CTA')
@@ -14,7 +15,9 @@ const CTA = () => {
       transition={{ duration: 0.5 }} className='w-full py-40 relative'>
       <div className='maxContainer paddingContainer flexBetween flex-col lg:flex-row gap-16'>
         <h2 className='bold-32 mb-6 text-center lg:text-start lg:bold-44'><span className='text-green-100'>{t('title1')}</span>{t('title2')}</h2>
-        <p className='regular-16 text-gray-20 text-center lg:text-start lg:regular-18 mb-6 w-full max-w-[592px]'>{t('description')}</p>
+        <div>
+          <p className='regular-16 text-gray-20 text-center lg:text-start lg:regular-18 mb-6 w-full max-w-[592px]'>{t('description')}</p>
+        </div>
       </div>
       <div className='hidden md:block'>
         <Image
@@ -22,7 +25,7 @@ const CTA = () => {
           width={96}
           height={96}
           alt='ball-lg'
-          className='absolute right-[20px] top-[60px]'
+          className='absolute right-[20px] top-[50px]'
         />
         <Image
           src='/assets/ball-md.svg'
@@ -36,7 +39,7 @@ const CTA = () => {
           width={32}
           height={32}
           alt='ball-sm'
-          className='absolute right-[10px] top-[160px]'
+          className='absolute right-[10px] top-[150px]'
         />
       </div>
       <div className='hidden md:block'>

@@ -1,9 +1,9 @@
 {
     "Navbar": {
-        "contact": "Contact Us",
-        "aboutUs": "About Us",
+        "aboutUs": "About us",
         "services": "Services",
-        "works": "Some Works"
+        "works": "Some Works",
+        "contact": "Contact"
     },
     "Hero": {
         "title": "Developing ",

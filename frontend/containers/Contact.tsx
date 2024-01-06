@@ -11,7 +11,7 @@ const Contact = () => {
 
 
   return (
-    <section className='w-full sectionGray py-40'>
+    <section className='w-full sectionGray py-40' id='contact'>
       <div className='maxContainer paddingContainer flexBetween flex-col gap-16'>
         <motion.div
         whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
@@ -31,7 +31,7 @@ const Contact = () => {
             <Link
               href='mailto: stagetree.ti@gmail.com'
               target='_blank'
-              className='underline text-gray-50 hover:text-green-100 transition-all'
+              className='underline text-gray-50 hover:text-green-100 transition-all hover:font-bold'
             >
               stagetree.ti@gmail.com
             </Link>
@@ -48,7 +48,7 @@ const Contact = () => {
             <Link
               href='tel: +5585999670502'
               target='_blank'
-              className='underline text-gray-50 hover:text-green-100 transition-all'
+              className='underline text-gray-50 hover:text-green-100 transition-all hover:font-bold'
             >
               +55 (85) 9 9967-0502
             </Link>
@@ -65,7 +65,7 @@ const Contact = () => {
             <Link
               href='https://maps.app.goo.gl/uTh4iHp3iuLNcPgMA'
               target='_blank'
-              className='underline text-gray-50 hover:text-green-100 transition-all text-center lg:text-start'
+              className='underline text-gray-50 hover:text-green-100 transition-all text-center lg:text-start hover:font-bold'
             >
               117 Rua Pedro Gomes, São Gonçalo do Amarante , Brazil
             </Link>

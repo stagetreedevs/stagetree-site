@@ -1,9 +1,9 @@
 {
     "Navbar": {
-        "contact": "Entre en contacto",
-        "aboutUs": "Sobre Nosotros",
+        "aboutUs": "Sobre nosotros",
         "services": "Servicios",
-        "works": "Algunas Obras"
+        "works": "Algunas obras",
+        "contact": "Contacto"
     },
     "Hero": {
         "title": "Desarrollar productos digitales de ",

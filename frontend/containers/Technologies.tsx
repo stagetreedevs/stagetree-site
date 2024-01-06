@@ -25,7 +25,7 @@ const Technologies = () => {
                         <p className='text-center lg:text-start'>
                             <span className='text-green-100 bold-16'>{hoveredTitle}
                             </span> {hoveredDescription || t('descriptionFixed')}
-                            </p>
+                        </p>
                     </div>
 
                 </div>

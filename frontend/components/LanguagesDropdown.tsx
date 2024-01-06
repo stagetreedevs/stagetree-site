@@ -15,7 +15,7 @@ export default function App() {
 
     <Dropdown>
       <DropdownTrigger>
-        <button>
+        <button className="hover:bg-slate-200 transition-all p-2">
           <HiOutlineTranslate size={24} />
         </button>
       </DropdownTrigger>

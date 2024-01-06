@@ -2,6 +2,7 @@ export const NAV_LINKS = [
     { href: '#about', key: 'about_us', label: 'aboutUs' },
     { href: '#services', key: 'services', label: 'services' },
     { href: '#works', key: 'works', label: 'works' },
+    { href: '#contact', key: 'contact', label: 'contact' },
 ];
 
 export const SOCIAL_STAGE = [

@@ -23,9 +23,8 @@ const About = () => {
           {t('description')}
           </p>
           <Button
-            type='button'
             title={t('contact')}
-            variant='Arrow'
+            link='https://www.linkedin.com/company/stagetree/'
           />
         </div>
         <div>
