@@ -1,13 +1,23 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { HiChevronRight, HiArrowLeft, HiArrowRight } from 'react-icons/hi';
+import { HiChevronRight } from 'react-icons/hi';
 import { urlFor, client } from '@/app/client'
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
-import { flushSync } from 'react-dom';
-import Autoplay from 'embla-carousel-autoplay'
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+
+// import './styles.css';
+
+// import required modules
+import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 
 type WorksCardInfo = {
     title: string;
@@ -23,112 +33,68 @@ type WorksSwiperProps = {
     worksData: WorksCardInfo[];
 };
 
-const TWEEN_FACTOR = 4.2
-
-const numberWithinRange = (number: number, min: number, max: number): number =>
-    Math.min(Math.max(number, min), max)
-
 export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
     const t = useTranslations();
     const params = useParams();
 
     console.log(params)
 
-    const [emblaRef, emblaApi] = useEmblaCarousel({
-        slidesToScroll: 1,
-        loop: true,
-        
-    }, [Autoplay({delay: 5000})]);
-
-    const [tweenValues, setTweenValues] = useState<number[]>([])
-
-    const onScroll = useCallback(() => {
-        if (!emblaApi) return
-
-        const engine = emblaApi.internalEngine()
-        const scrollProgress = emblaApi.scrollProgress()
-
-        const styles = emblaApi.scrollSnapList().map((scrollSnap, index) => {
-            let diffToTarget = scrollSnap - scrollProgress
-
-            if (engine.options.loop) {
-                engine.slideLooper.loopPoints.forEach((loopItem) => {
-                    const target = loopItem.target()
-                    if (index === loopItem.index && target !== 0) {
-                        const sign = Math.sign(target)
-                        if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress)
-                        if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress)
-                    }
-                })
-            }
-            const tweenValue = 1 - Math.abs(diffToTarget * TWEEN_FACTOR)
-            return numberWithinRange(tweenValue, 0.3, 1)
-        })
-        setTweenValues(styles)
-    }, [emblaApi, setTweenValues])
-
-    console.log(tweenValues)
-
-    // useEffect(() => {
-    //     if (!emblaApi) return;
-
-    //     onSelect(emblaApi);
-
-    //     emblaApi.on('reInit', onSelect);
-    //     emblaApi.on('select', onSelect);
-    // }, [emblaApi, onSelect]);
-
-    useEffect(() => {
-        if (!emblaApi) return
-
-        onScroll()
-        emblaApi.on('scroll', () => {
-            flushSync(() => onScroll())
-        })
-
-        emblaApi.on('reInit', onScroll)
-    }, [emblaApi, onScroll])
-
     const currentLocale = String(params.locale).toUpperCase()
     const selectedDescription = `description${currentLocale}` as 'descriptionPT' | 'descriptionES' | 'descriptionEN'
 
     return (
-        <div style={{ overflow: 'hidden', width: '100%' }}>
-            <div className="embla overflow-hidden h-full" ref={emblaRef}>
-                <div className="embla__container flex w-full h-full">
-                    {worksData.map((work, index) => (
-                        <div key={index} className="embla__slide flex-[0_0_50%]" style={{
-                            ...(tweenValues.length && { opacity: tweenValues[index] })
-                        }}>
-                            <div className='relative'>
-                                <Image
-                                    src={urlFor(work.imgUrl).url()}
-                                    width={592}
-                                    height={382}
-                                    alt={work.title}
-                                    className='mb-4 rounded-lg border-gray-400 border-[0.5px] hover:shadow-lg transition-all'
-                                />
+        <div className=''>
+            <Swiper
+                effect={'coverflow'}
+                grabCursor={true}
+                centeredSlides={true}
+                slidesPerView={'auto'}
+                loop={true}
+                coverflowEffect={{
+                    rotate: 50,
+                    stretch: 80,
+                    depth: 10,
+                    modifier: 1,
+                    slideShadows: false,
+                }}
+                watchSlidesProgress={true}
+                autoplay={{
+                    delay: 50000,
+                }}
+                navigation={true}
+                modules={[EffectCoverflow, Pagination, Autoplay]}
+                className="w-full max-w-[1000px] py-[50px]"
+            >
+                {worksData.map((work, index) => (
+                    <SwiperSlide className='bg-center bg-cover max-w-[700px] h-[400px]'>
+                        <div className='flexCenter flex-col'>
+                            <Image
+                                src={urlFor(work.imgUrl).url()}
+                                width={592}
+                                height={382}
+                                alt={work.title}
+                                className='mb-4 rounded-lg border-gray-400 border-[0.5px] hover:shadow-lg transition-all'
+                            />
 
-                                <h3 className='bold-24'>{work.title}</h3>
-                                <p className='regular-18 text-gray-20 mb-4'>{work[selectedDescription]}</p>
-                                <ul className="flexStart gap-2 mb-5">
-                                    {work.tags?.map((tag, tagIndex) => (
-                                        <div key={tagIndex} className="regular-16 bg-gray-200 px-4 py-1">
-                                            {tag}
-                                        </div>
-                                    ))}
-                                </ul>
-                                <Link href={work.projectLink} className='text-green-100 flex flex-row flexStart bold-16' target='_blank'>
-                                    Confira o projeto
+                            <h3 className='bold-24'>{work.title}</h3>
+                            <p className='regular-18 text-gray-20 mb-4 text-center max-w-[592px]'>{work[selectedDescription]}</p>
+                            <ul className="flexStart gap-2 mb-5">
+                                {work.tags?.map((tag, tagIndex) => (
+                                    <div key={tagIndex} className="regular-16 bg-gray-200 px-4 py-1">
+                                        {tag}
+                                    </div>
+                                ))}
+                            </ul>
+                            <Link href={work.projectLink} className='text-green-100 flex flex-row flexStart bold-16 hover:underline hover:text-blue-100 transition-all' target='_blank'>
+                                Confira o projeto
+                                {/* <span className='hover:text-blue-100'>
                                     <HiChevronRight color="#05F29B" size={20} />
-                                </Link>
-                            </div>
+                                </span> */}
+                            </Link>
                         </div>
-                    ))}
-                </div>
-
-
-            </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
         </div>
     );
 };
