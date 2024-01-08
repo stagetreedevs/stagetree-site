@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { HiChevronRight } from 'react-icons/hi';
+import { HiChevronRight, HiChevronLeft } from 'react-icons/hi';
 import { urlFor, client } from '@/app/client'
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
@@ -12,12 +12,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
 
-// import './styles.css';
 
 // import required modules
-import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
+import { Autoplay, EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
 type WorksCardInfo = {
     title: string;
@@ -36,7 +34,6 @@ type WorksSwiperProps = {
 export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
     const t = useTranslations();
     const params = useParams();
-
     console.log(params)
 
     const currentLocale = String(params.locale).toUpperCase()
@@ -45,7 +42,7 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
     return (
         <div className=''>
             <Swiper
-                effect={'coverflow'}
+                
                 grabCursor={true}
                 centeredSlides={true}
                 slidesPerView={'auto'}
@@ -61,8 +58,11 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
                 autoplay={{
                     delay: 50000,
                 }}
-                navigation={true}
-                modules={[EffectCoverflow, Pagination, Autoplay]}
+                modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
+                navigation={{
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }}
                 className="w-full max-w-[1000px] py-[50px]"
             >
                 {worksData.map((work, index) => (
@@ -94,6 +94,13 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
                         </div>
                     </SwiperSlide>
                 ))}
+
+                <div className='w-full flexCenter mt-8 gap-3'>
+
+                    <button className="swiper-button-prev w-[40px] h-[40px] flexCenter bg-green-100 rounded-[100%]"><HiChevronLeft size={22} color='#eee' /></button>
+                    <button className="swiper-button-next w-[40px] h-[40px] flexCenter bg-green-100 rounded-[100%]"><HiChevronRight size={22} color='#eee' /></button>
+                </div>
+
             </Swiper>
         </div>
     );

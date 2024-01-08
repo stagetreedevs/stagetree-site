@@ -1,6 +1,4 @@
 'use client'
-
-import Button from '@/components/Button';
 import LanguagesDropdown from '@/components/LanguagesDropdown';
 import { NAV_LINKS } from '@/constants';
 import Image from 'next/image';
@@ -69,9 +67,11 @@ const Navbar = () => {
             <div className='flexBetween'>
               <ul className="flex flex-col gap-3 mt-5">
                 {NAV_LINKS.map((link) => (
-                  <Link href={link.href} key={link.key} className="bold-16 hover:text-green-100">
-                    {t(link.label)}
-                  </Link>
+                  <li>
+                    <Link href={link.href} key={link.key} className="bold-16 hover:text-green-100">
+                      {t(link.label)}
+                    </Link>
+                  </li>
                 ))}
               </ul>
               <div className='mr-2'>
