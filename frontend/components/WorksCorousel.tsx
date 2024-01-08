@@ -63,8 +63,9 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 }}
-                className="w-full max-w-[1000px] py-[50px]"
+                className="w-full max-w-[1000px] py-[50px] relative"
             >
+                <button className='swiper-button-next w-[80px] h-full absolute top-0 right-0 z-10 hidden lg:block'></button>
                 {worksData.map((work, index) => (
                     <SwiperSlide className='bg-center bg-cover max-w-[700px] h-[400px]'>
                         <div className='flexCenter flex-col'>
@@ -85,17 +86,12 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
                                     </div>
                                 ))}
                             </ul>
-                            <Link href={work.projectLink} className='text-green-100 flex flex-row flexStart bold-16 hover:underline hover:text-blue-100 transition-all' target='_blank'>
-                                Confira o projeto
-                                {/* <span className='hover:text-blue-100'>
-                                    <HiChevronRight color="#05F29B" size={20} />
-                                </span> */}
-                            </Link>
                         </div>
                     </SwiperSlide>
                 ))}
+                <button className='swiper-button-prev w-[80px] h-full absolute top-0 left-0 z-10 hidden lg:block'></button>
 
-                <div className='w-full flexCenter mt-8 gap-3'>
+                <div className='w-full flexCenter mt-8 gap-3 lg:hidden'>
 
                     <button className="swiper-button-prev w-[40px] h-[40px] flexCenter bg-green-100 rounded-[100%]"><HiChevronLeft size={22} color='#eee' /></button>
                     <button className="swiper-button-next w-[40px] h-[40px] flexCenter bg-green-100 rounded-[100%]"><HiChevronRight size={22} color='#eee' /></button>
