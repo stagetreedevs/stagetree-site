@@ -15,7 +15,7 @@ import 'swiper/css/effect-coverflow';
 
 
 // import required modules
-import { Autoplay, EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, EffectCoverflow, Navigation } from 'swiper/modules';
 
 type WorksCardInfo = {
     title: string;
@@ -56,9 +56,9 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
                 }}
                 watchSlidesProgress={true}
                 autoplay={{
-                    delay: 50000,
+                    delay: 15000,
                 }}
-                modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
+                modules={[EffectCoverflow, Autoplay, Navigation]}
                 navigation={{
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
