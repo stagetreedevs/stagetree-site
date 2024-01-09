@@ -25,19 +25,20 @@ const TechnologieCard: React.FC<TechnologieCardProps> = ({ onHover }) => {
     const currentLocale = String(params.locale).toUpperCase()
 const selectedDescription = `description${currentLocale}` as 'descriptionPT' | 'descriptionES' | 'descriptionEN'
 
-    useEffect(() => {
-        const query = '*[_type == "technologies"]'; // Corrigir para "technologies"
+useEffect(() => {
+    const query = '*[_type == "technologies"] | order(order asc)'; // Adiciona a ordenação aqui
 
-        client.fetch(query)
-            .then((data: Technology[]) => {
-                setTechnologies(data);
-            })
-            .catch((error) => {
-                console.error('Error fetching technologies:', error);
-            });
-    }, []);
+    client.fetch(query)
+        .then((data: Technology[]) => {
+            setTechnologies(data); // As tecnologias são definidas aqui já ordenadas
+        })
+        .catch((error) => {
+            console.error('Error fetching technologies:', error);
+        });
+}, []);
 
-    console.log(technologies);
+
+    
 
     return (
         <>

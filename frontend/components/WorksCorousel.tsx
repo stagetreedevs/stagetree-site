@@ -13,7 +13,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 
-
 // import required modules
 import { Autoplay, EffectCoverflow, Navigation } from 'swiper/modules';
 
@@ -34,7 +33,6 @@ type WorksSwiperProps = {
 export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
     const t = useTranslations();
     const params = useParams();
-    console.log(params)
 
     const currentLocale = String(params.locale).toUpperCase()
     const selectedDescription = `description${currentLocale}` as 'descriptionPT' | 'descriptionES' | 'descriptionEN'
