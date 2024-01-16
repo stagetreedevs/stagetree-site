@@ -38,7 +38,7 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
     return (
         <div className=''>
             <Swiper
-                
+
                 grabCursor={true}
                 centeredSlides={true}
                 slidesPerView={'auto'}
@@ -78,9 +78,11 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
                             <ul className="flexStart gap-2 mb-5">
                                 {work.tags?.map((tag, tagIndex) => (
                                     <div key={tagIndex} className="regular-16 bg-gray-200 px-4 py-1 cursor-default hover:shadow-md rounded-lg transition-all">
-                                        {tag}
+                                        <strong>
+                                            {tag}
+                                        </strong>
                                     </div>
-                            ))} 
+                                ))}
                             </ul>
                         </div>
                     </SwiperSlide>

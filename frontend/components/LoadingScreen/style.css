@@ -13,6 +13,10 @@
     justify-content: center;
 }
 
+svg {
+    z-index: 3;
+}
+
 
 svg #green-vector {
     fill: transparent;
@@ -87,6 +91,7 @@ svg #blue-letter{
     filter: blur(300px);
 
     animation: scale 6s ease infinite alternate;
+    z-index: 1;
 }
 
 @keyframes scale {
