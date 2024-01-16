@@ -18,15 +18,15 @@ const Hero = () => {
             width={270}
             height={458}
             alt="astronaut"
-            className='absolute z-[4] w-40 lg:w-[300px] hero-image'
+            className='absolute z-[6] w-40 lg:w-[300px] hero-image'
             priority={true}
           />
           <div className="crimson-ball absolute z-[2]"/>
         <div className=''>
           <div className="green-planet absolute z-[4] left-20" />
-          <div className="yellow-planet absolute right-96 bottom-0 z-[3]" />
-          <div className="crimson-planet absolute right-28 bottom-32 z-[3]" />
-          <div className="blue-planet absolute right-10 top-40 z-[3]" />
+          <div className="yellow-planet absolute right-20 lg:right-96 bottom-0 z-[3]" />
+          <div className="crimson-planet absolute right-28 bottom-16 lg:bottom-32 z-[3]" />
+          <div className="blue-planet absolute lg:right-10 right-30 lg:top-40 top-20 z-[3]" />
         </div>
         </div>
         <div className='absolute w-[2px] h-10 left-[50%] bg-blue-100 opacity-20 bottom-0 z-20 mb-[-20px] rounded-lg'>
