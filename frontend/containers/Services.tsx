@@ -18,42 +18,55 @@ const Services = () => {
         <div className='flexBetween flex-col max-w-[1000px] w-full'>
           <h3 className='bold-20 text-center lg:bold-24'>{t('topic')}</h3>
           <h2 className='bold-32 mb-4 text-center lg:bold-44 mt-8'>
-          {t('title1')}<span className='text-green-100'>{t('title2')}</span> {t('title3')} <span className='text-green-100'>{t('title4')}</span> {t('title5')}
+            {t('title1')}<span className='text-green-100'>{t('title2')}</span> {t('title3')} <span className='text-green-100'>{t('title4')}</span> {t('title5')}
           </h2>
           <p className='regular-16 text-gray-20 text-center lg:regular-18'>{t('description')}</p>
         </div>
         <div className='flexBetween flex-col md:flex-row gap-12 mt-16'>
-          <ServiceCard
-            title={t('card1_title')}
-            image='/webdesign.svg'
-            description={t('card1_description')}
-          />
-          <ServiceCard
-            title={t('card2_title')}
-            image='/appcreation.svg'
-            description={t('card2_description')}
-          />
-          <ServiceCard
-            title={t('card3_title')}
-            image='/systemdev.svg'
-            description={t('card3_description')}
-          />
+          <motion.div
+            whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+            transition={{ duration: 0.4 }} >
+            <ServiceCard
+              title={t('card1_title')}
+              image='/webdesign.svg'
+              description={t('card1_description')}
+            />
+          </motion.div>
+          <motion.div
+            whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+            transition={{ duration: 0.6 }} >
+            <ServiceCard
+              title={t('card2_title')}
+              image='/appcreation.svg'
+              description={t('card2_description')}
+            />
+          </motion.div>
+          <motion.div
+            whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+            transition={{ duration: 0.8 }} >
+            <ServiceCard
+              title={t('card3_title')}
+              image='/systemdev.svg'
+              description={t('card3_description')}
+            />
+          </motion.div>
+
         </div>
       </motion.div>
       <Image
-          src='/assets/triangles.svg'
-          width={96}
-          height={96}
-          alt='ball-lg'
-          className='absolute right-0 top-[60px] hidden lg:block'
-        />
+        src='/assets/triangles.svg'
+        width={96}
+        height={96}
+        alt='ball-lg'
+        className='absolute right-0 top-[60px] hidden lg:block'
+      />
       <Image
-          src='/assets/triangles.svg'
-          width={96}
-          height={96}
-          alt='ball-lg'
-          className='absolute left-0 bottom-[60px] hidden lg:block'
-        />
+        src='/assets/triangles.svg'
+        width={96}
+        height={96}
+        alt='ball-lg'
+        className='absolute left-0 bottom-[60px] hidden lg:block'
+      />
 
     </section>
   )

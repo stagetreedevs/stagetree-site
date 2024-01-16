@@ -1,6 +1,5 @@
-import React, { useCallback, useEffect, useState, useRef } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { HiChevronRight, HiChevronLeft } from 'react-icons/hi';
 import { urlFor, client } from '@/app/client'
 import { useTranslations } from 'next-intl';
@@ -31,7 +30,6 @@ type WorksSwiperProps = {
 };
 
 export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
-    const t = useTranslations();
     const params = useParams();
 
     const currentLocale = String(params.locale).toUpperCase()
@@ -63,14 +61,14 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
                 }}
                 className="w-full max-w-[1000px] py-[50px] relative"
             >
-                <button className='swiper-button-next w-[80px] h-full absolute top-0 right-0 z-10 hidden lg:block'></button>
+                <button className='swiper-button-next w-[100px] h-full absolute top-0 right-0 z-10 hidden lg:block glassMorphism-2'></button>
                 {worksData.map((work, index) => (
-                    <SwiperSlide className='bg-center bg-cover max-w-[700px] h-[400px]'>
+                    <SwiperSlide key={work.title} className='bg-center bg-cover max-w-[700px] h-[400px]'>
                         <div className='flexCenter flex-col'>
                             <Image
                                 src={urlFor(work.imgUrl).url()}
-                                width={592}
-                                height={382}
+                                width={595}
+                                height={380}
                                 alt={work.title}
                                 className='mb-4 rounded-lg border-gray-400 border-[0.5px] hover:shadow-lg transition-all'
                             />
@@ -79,20 +77,20 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
                             <p className='regular-18 text-gray-20 mb-4 text-center max-w-[592px]'>{work[selectedDescription]}</p>
                             <ul className="flexStart gap-2 mb-5">
                                 {work.tags?.map((tag, tagIndex) => (
-                                    <div key={tagIndex} className="regular-16 bg-gray-200 px-4 py-1">
+                                    <div key={tagIndex} className="regular-16 bg-gray-200 px-4 py-1 cursor-default hover:shadow-md rounded-lg transition-all">
                                         {tag}
                                     </div>
-                                ))}
+                            ))} 
                             </ul>
                         </div>
                     </SwiperSlide>
                 ))}
-                <button className='swiper-button-prev w-[80px] h-full absolute top-0 left-0 z-10 hidden lg:block'></button>
+                <button className='swiper-button-prev w-[100px] h-full absolute top-0 left-0 z-10 hidden lg:block glassMorphism-2'></button>
 
-                <div className='w-full flexCenter mt-8 gap-3 lg:hidden'>
+                <div className='w-full flexCenter mt-8 gap-3 '>
 
-                    <button className="swiper-button-prev w-[40px] h-[40px] flexCenter bg-green-100 rounded-[100%]"><HiChevronLeft size={22} color='#eee' /></button>
-                    <button className="swiper-button-next w-[40px] h-[40px] flexCenter bg-green-100 rounded-[100%]"><HiChevronRight size={22} color='#eee' /></button>
+                    <button className="swiper-button-prev w-[40px] h-[40px] flexCenter bg-green-100 rounded-[100%] hover:bg-blue-100 transition-all text-blue-100 hover:text-white-50"><HiChevronLeft size={22} /></button>
+                    <button className="swiper-button-next w-[40px] h-[40px] flexCenter bg-green-100 rounded-[100%] hover:bg-blue-100 transition-all text-blue-100 hover:text-white-50 "><HiChevronRight size={22} /></button>
                 </div>
 
             </Swiper>

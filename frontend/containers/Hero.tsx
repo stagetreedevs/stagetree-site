@@ -20,6 +20,7 @@ const Hero = () => {
             height={458}
             alt="astronaut"
             className='absolute z-[4] w-40 lg:w-[300px] hero-image'
+            priority={true}
           />
           <div className="crimson-ball absolute z-[2]"/>
         <div className=''>
