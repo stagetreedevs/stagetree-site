@@ -71,6 +71,7 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
                                 height={380}
                                 alt={work.title}
                                 className='mb-4 rounded-lg border-gray-400 border-[0.5px] hover:shadow-lg transition-all'
+                                priority={true}
                             />
 
                             <h3 className='bold-24'>{work.title}</h3>
