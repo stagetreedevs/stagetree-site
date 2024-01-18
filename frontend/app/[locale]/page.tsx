@@ -16,7 +16,7 @@ import Works from "@/containers/Works";
 export default function Home() {
   return (
     <>
-      <LoadScreen/>
+      {/* <LoadScreen/> */}
       <Navbar />
       <ButtonContact />
       <main>

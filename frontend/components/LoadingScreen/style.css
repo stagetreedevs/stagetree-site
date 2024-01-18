@@ -17,20 +17,25 @@ svg {
     z-index: 3;
 }
 
+strong {
+    font-size: 32px;
+    color: #010326;
+    z-index: 3;
+    line-height: normal;
+}
+
+span {
+    color: #05F29B;
+}
+
 
 svg #green-vector {
     fill: transparent;
 
     animation: logo_varia_green 8s ease infinite alternate;
-} 
-
-svg #green-letter {
-    fill: transparent;
-
-    animation: logo_varia_green 8s ease infinite alternate;
 }
 
-@keyframes logo_varia_green{
+@keyframes logo_varia_green {
     0% {
         stroke-width: 0;
         fill: transparent;
@@ -50,18 +55,14 @@ svg #green-letter {
     }
 }
 
-svg #blue-vector{
+svg #blue-vector {
     fill: transparent;
 
     animation: logo_varia_blue 8s ease infinite alternate;
-} 
-svg #blue-letter{
-    fill: transparent;
+}
 
-    animation: logo_varia_blue 8s ease infinite alternate;
-} 
 
-@keyframes logo_varia_blue{
+@keyframes logo_varia_blue {
     0% {
         stroke-width: 0;
         fill: transparent;
@@ -81,6 +82,23 @@ svg #blue-letter{
     }
 }
 
+strong {
+    opacity: 0;
+    /* Inicialmente, o texto estará completamente transparente */
+    animation: fadeIn 8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        /* No início da animação, o texto está totalmente transparente */
+    }
+
+    to {
+        opacity: 1;
+        /* No final da animação, o texto está completamente visível */
+    }
+}
 
 .loadscreen-ball {
     position: absolute;
