@@ -79,7 +79,7 @@ export const WorksCarousel: React.FC<WorksSwiperProps> = ({ worksData }) => {
                             <ul className="flexStart gap-2 mb-5">
                                 {work.tags?.map((tag, tagIndex) => (
                                     <div key={tagIndex} className=" bg-gray-200 px-4 py-1 cursor-default hover:shadow-md rounded-lg transition-all">
-                                        <strong className='regular-16'>
+                                        <strong className='text-[12px]'>
                                             {tag}
                                         </strong>
                                     </div>

@@ -82,7 +82,7 @@ svg #blue-vector {
     }
 }
 
-strong {
+.loading-phrase {
     opacity: 0;
     /* Inicialmente, o texto estará completamente transparente */
     animation: fadeIn 8s ease forwards;
