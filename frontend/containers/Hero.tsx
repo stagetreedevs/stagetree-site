@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { useTranslations } from 'next-intl'
+import { Tooltip } from "@nextui-org/react";
 
 
 const Hero = () => {
@@ -24,15 +25,19 @@ const Hero = () => {
           className='absolute z-[6] w-40 lg:w-[300px] hero-image'
           priority={true}
         />
-        <div className='absolute z-[7] bg-slate-200 rounded-[50%] shadow-xl left-[70px]'>
-          <Image
-            src="/devops.svg"
-            width={44}
-            height={20}
-            alt="devops"
-            className='p-4'
-          />
-        </div>
+        <Tooltip content='Devops'>
+          <div className='absolute z-[7] bg-slate-200 rounded-[50%] shadow-xl left-[70px]'>
+            <Image
+              src="/devops.svg"
+              width={44}
+              height={20}
+              alt="devops"
+              className='p-4'
+            />
+
+          </div>
+        </Tooltip>
+        <Tooltip content={t("devlopment")}>
         <div className='absolute z-[7] bg-slate-200 rounded-[50%] shadow-xl right-[50px] bottom-[60px] lg:bottom-[120px]'>
           <Image
             src="/devicon.svg"
@@ -42,6 +47,8 @@ const Hero = () => {
             className='p-4'
           />
         </div>
+        </Tooltip>
+        <Tooltip content={t("ai")}>
         <div className='absolute z-[7] bg-slate-200 rounded-[50%] shadow-xl right-[70px] top-[20px] lg:top-[100px]'>
           <Image
             src="/iaicon.svg"
@@ -51,7 +58,8 @@ const Hero = () => {
             className='p-4'
           />
         </div>
-        <div className='absolute w-[250px] h-[250px] lg:w-[500px] lg:h-[500px] bg-[#bfc0c1] rounded-[50%] blur-[800px]'>
+        </Tooltip>
+        <div className='absolute w-[250px] h-[250px] lg:w-[500px] lg:h-[500px] bg-[#bfc0c1] rounded-[50%] blur-[800px] opacity-[.9]'>
         </div>
       </div>
       <div className='absolute w-[2px] h-10 left-[50%] bg-blue-100 opacity-20 bottom-0 z-20 mb-[-20px] rounded-lg'></div>

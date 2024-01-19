@@ -14,7 +14,7 @@ const config: Config = {
       // Extensão de cores personalizadas
       colors: {
         green: {
-          100: '#05F29B',
+          100: '#04CF84',
         },
         gray: {
           10: '#959595',

@@ -106,7 +106,7 @@ svg #blue-vector {
     height: 300px;
     background-color: #162361;
     border-radius: 50%;
-    filter: blur(300px);
+    filter: blur(800px);
 
     animation: scale 6s ease infinite alternate;
     z-index: 1;

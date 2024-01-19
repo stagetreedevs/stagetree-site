@@ -28,7 +28,7 @@ const Technologies = () => {
                     </div>
 
                     <div className='h-[50%] flex items-start'>
-                        <p className='text-center lg:text-start h-[50%]'>
+                        <p className='text-center lg:text-start h-[50%] transition-all'>
                             <span className='text-green-100 bold-16'><strong>{hoveredTitle}</strong>
                             </span> {hoveredDescription || t('descriptionFixed')}
                         </p>
