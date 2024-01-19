@@ -33,8 +33,6 @@ const LoadScreen = () => {
                 </svg>
 
                 <strong className='text-center'>Rooting <span>on</span> people.<br/>Rooting <span>for</span> people.</strong>
-                
-
             </div>
 
 
