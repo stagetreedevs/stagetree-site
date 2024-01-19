@@ -11,6 +11,11 @@ export default function App() {
 
   const pathName = usePathname()
 
+  const router = useRouter();
+  const handleItemClick = (locale: string) => {
+    router.push(pathName, { locale }); 
+  };
+
   return (
 
     <Dropdown>
@@ -22,27 +27,25 @@ export default function App() {
       <DropdownMenu variant="faded" aria-label="Dropdown menu with icons">
         <DropdownItem
           key="portuguese"
-          startContent={<Image src='/pt_icon.png' width={32} height={32} alt="language" />}
+          startContent={<Image src='/pt_icon.png' width={32} height={32} alt="language" 
+          />}
+          onClick={() => handleItemClick("pt")}
         >
-          <Link href={pathName} locale="pt">
             Português
-          </Link>
         </DropdownItem>
         <DropdownItem
           key="english"
           startContent={<Image src='/en_icon.png' width={32} height={32} alt="language" />}
+          onClick={() => handleItemClick("en")}
         >
-          <Link href={pathName} locale="en">
             English
-          </Link>
         </DropdownItem>
         <DropdownItem
           key="spanish"
           startContent={<Image src='/es_icon.png' width={32} height={32} alt="language" />}
+          onClick={() => handleItemClick("es")}
         >
-          <Link href={pathName} locale="es">
             Spanish
-          </Link>
         </DropdownItem>
       </DropdownMenu>
     </Dropdown>

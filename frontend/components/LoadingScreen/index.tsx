@@ -2,10 +2,13 @@
 
 import React, { useEffect } from 'react';
 import './style.css';
+import { useTranslations } from 'next-intl'
 
 import { gsap } from 'gsap'
 
 const LoadScreen = () => {
+    const t = useTranslations("LoadScreen");
+
     useEffect(() => {
         const screen = document.querySelector('.loadscreen') as HTMLElement | null;
 
@@ -32,7 +35,7 @@ const LoadScreen = () => {
                     <path id="blue-vector" d="M101.85 1.31406C100.783 3.7238 99.701 6.0682 98.6352 8.37643C96.2639 13.5123 93.9752 18.4692 92.1276 23.5682L92.1275 23.5681L92.1232 23.5811C82.8121 51.6502 82.8136 79.3167 91.578 107.852L91.5821 107.865L91.5869 107.878C95.6068 118.767 100.493 129.44 105.356 140.059C107.251 144.199 109.143 148.33 110.979 152.464C118.893 170.387 123.48 188.726 121.205 208.109L121.205 208.11C119.135 225.897 111.263 241.178 97.009 253.69C95.6737 254.688 94.0161 255.156 92.3561 255.004C74.2285 252.566 59.0426 244.774 45.9425 233.533C23.9472 214.653 11.535 191.093 5.25753 164.728L5.2575 164.727C1.31104 148.171 -0.74955 131.414 1.31292 114.47L0.886498 114.418L1.31292 114.47C4.82591 85.5954 13.886 58.6009 34.2101 35.4582C48.5617 19.1237 66.2224 7.1548 89.3308 2.83202C92.1418 2.30718 95.0067 2.01953 97.9929 1.71968C99.2552 1.59293 100.539 1.464 101.85 1.31406Z" fill="#010326" stroke="#010326" />
                 </svg>
 
-                <strong className='text-center loading-phrase'>Rooting <span>on</span> people.<br/>Rooting <span>for</span> people.</strong>
+                <strong className='text-center loading-phrase'>{t("title1")} <span>{t("span1")}</span> {t("title2")}<br/>{t("title3")} <span>{t("span2")}</span> {t("title4")}</strong>
             </div>
 
 

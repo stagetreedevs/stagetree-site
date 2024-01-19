@@ -17,14 +17,14 @@ svg {
     z-index: 3;
 }
 
-strong {
+.loading-phrase {
     font-size: 32px;
     color: #010326;
     z-index: 3;
     line-height: normal;
 }
 
-span {
+.loading-phrase span {
     color: #05F29B;
 }
 

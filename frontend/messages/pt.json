@@ -29,7 +29,7 @@
         "card1_title": "Website Design",
         "card1_description": "Criamos sites visualmente impressionantes que geram resultados.",
         "card2_title": "Criação de Apps",
-        "card2_description": "Nossa equipe de programadores pode dar vida às suas ideias de aplicativos para seu negócio.",
+        "card2_description": "Nossa equipe de desenvolvedores pode dar vida às suas ideias de aplicativos para seu negócio.",
         "card3_title": "Desenvolvimento de Sistemas",
         "card3_description": "Desenvolvemos sistemas robustos e escaláveis adaptados às suas necessidades específicas."
     },
@@ -66,7 +66,16 @@
         "description_hq": "Esperamos ver você em breve."
     },
     "Footer": {
-        "description": "Somos uma empresa de tecnologia especializada na criação de aplica'tivos, sistemas web, web design. Focamos na evolução do seu negócio.",
+        "description": "Somos uma empresa de tecnologia especializada na criação de aplicativos, sistemas web, web design. Focamos na evolução do seu negócio.",
         "copyright": "Todos os direitos reservados."
+    },
+    "LoadScreen": {
+        "title1": "Enraizada",
+        "span1": "em",
+        "title2": "pessoas.",
+        "title3": "Torcendo",
+        "span2": "por",
+        "title4": "pessoas."
     }
 }
+

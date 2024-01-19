@@ -22,13 +22,13 @@
         "topic": "Innovation",
         "title1": "Transforming ",
         "title2": "ideas",
-        "title3": " powerful digital",
+        "title3": "into powerful digital",
         "title4": "solutions",
         "title5": "",
-        "description": "At StageTree, we specialize in providing best-in-class digital solutions for your business. Our services include systems development, application creation and website design, all aimed at helping you achieve your goals.",
+        "description": "At StageTree, we excel in delivering top-notch digital solutions tailored to elevate your business. Our comprehensive services encompass system development, app development, and website design, all strategically crafted to empower you in accomplishing your objectives.",
         "card1_title": "Website Design",
         "card1_description": "We create visually stunning websites that drive results.",
-        "card2_title": "App Creation",
+        "card2_title": "App Development",
         "card2_description": "Our team of programmers can bring your app ideas to life for your business.",
         "card3_title": "Systems Development",
         "card3_description": "We develop robust and scalable systems adapted to your specific needs."
@@ -68,5 +68,13 @@
     "Footer": {
         "description": "We are a technology company specialized in creating applications, web systems, web design. We focus on the evolution of your business.",
         "copyright": "All rights reserved."
+    },
+    "LoadScreen": {
+        "title1": "Rooting",
+        "span1": "on",
+        "title2": "people.",
+        "title3": "Rooting",
+        "span2": "for",
+        "title4": "people."
     }
 }

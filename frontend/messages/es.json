@@ -68,5 +68,13 @@
     "Footer": {
         "description": "Somos una empresa de tecnología especializada en la creación de aplicaciones, sistemas web, diseño web. Nos centramos en la evolución de su negocio.",
         "copyright": "Todos los derechos reservados."
+    },
+    "LoadScreen": {
+        "title1": "Arraigada",
+        "span1": "en",
+        "title2": "personas.",
+        "title3": "Apoyando",
+        "span2": "a",
+        "title4": "personas."
     }
 }
