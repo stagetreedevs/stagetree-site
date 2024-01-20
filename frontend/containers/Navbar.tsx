@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <nav className=' w-full border-b-2 fixed z-20 glassMorphism'>
       <div className='maxContainer paddingContainer flexBetween py-3 relative z-300 '>
-        <Link href='/' className=''>
+        <Link href='#hero' className=''>
           <Image
             src="/stagetree_logo_1.svg"
             width={160}

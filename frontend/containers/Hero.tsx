@@ -9,7 +9,7 @@ const Hero = () => {
 
   return (
 
-    <section className='maxContainer paddingContainer flexBetween flex-col-reverse lg:flex-row h-full py-20 relative'>
+    <section id="hero" className='maxContainer paddingContainer flexBetween flex-col-reverse lg:flex-row h-full py-20 relative'>
 
       <div className='mt-8 relative flex flex-col lg:w-1/2 w-full lg:mt-0 '>
         <h1 className='bold-32 md-bold-44 mb-6 text-center lg:text-start lg:bold-64'>{t("title")}<span className='text-green-100'>{t("title2")} </span>{t("title3")}</h1>

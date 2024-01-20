@@ -14,7 +14,7 @@ const ServiceCard = ({image, title, description} : ServiceCardProps) => {
     return (
         <motion.div
         whileInView={{ opacity: 1 }}
-        whileHover={{ scale: 1.02 }}
+        whileHover={{ scale: 1.01 }}
         transition={{ duration: 0.5, type: 'tween' }} className='bg-white-50 w-full max-w-[300px] h-full max-h-[390px] flexCenter flex-col hover:shadow-lg transition-all px-8 py-[40px] rounded-lg hover:bg-white-90'>
             <Image
                 src={image}

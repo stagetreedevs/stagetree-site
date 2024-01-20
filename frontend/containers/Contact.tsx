@@ -2,9 +2,10 @@
 
 import Link from 'next/link'
 import React from 'react'
-import { HiMail, HiPhone, HiOutlineLocationMarker } from 'react-icons/hi'
+import { HiMail, HiPhone, HiOutlineLocationMarker, HiChevronRight } from 'react-icons/hi'
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import ContactCard from '@/components/ContactCard';
 
 const Contact = () => {
   const t = useTranslations('Contact')
@@ -14,15 +15,15 @@ const Contact = () => {
     <section className='w-full sectionGray py-40' id='contact'>
       <div className='maxContainer paddingContainer flexBetween flex-col gap-16'>
         <motion.div
-        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
-        transition={{ duration: 0.5 }}>
+          whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+          transition={{ duration: 0.5 }}>
           <h2 className='bold-32 mb-6 text-center lg:text-start lg:bold-44'>{t('title1')}<span className='text-green-100'>{t('title2')}</span> </h2>
         </motion.div>
         <div className='flexBetween w-full gap-10 flex-col lg:flex-row'>
-        <motion.div
-        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
-        transition={{ duration: 0.5 }} className='w-full max-w-[384px] flexCenter flex lg:items-start flex-col'>
-            <HiMail
+          <motion.div
+            whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+            transition={{ duration: 0.5 }} className='w-full max-w-[384px] flexCenter flex lg:items-start flex-col'>
+            {/* <HiMail
               size={50}
               color='#010326'
             />
@@ -34,12 +35,19 @@ const Contact = () => {
               className='underline text-gray-50 hover:text-green-100 transition-all hover:font-bold'
             >
               stagetree.ti@gmail.com
-            </Link>
+            </Link> */}
+            <ContactCard
+              type='email'
+              title={t('title_email')}
+              description={t('decription_email')}
+              linkHref="mailto: stagetree.ti@gmail.com"
+              linkTitle="stagetree.ti@gmail.com"
+            />
           </motion.div>
           <motion.div
-        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
-        transition={{ duration: 0.7 }} className='w-full max-w-[384px] flexCenter flex lg:items-start flex-col'>
-            <HiPhone
+            whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+            transition={{ duration: 0.7 }} className='w-full max-w-[384px] flexCenter flex lg:items-start flex-col'>
+            {/* <HiPhone
               size={50}
               color='#010326'
             />
@@ -51,12 +59,19 @@ const Contact = () => {
               className='underline text-gray-50 hover:text-green-100 transition-all hover:font-bold'
             >
               +55 (85) 9 9967-0502
-            </Link>
+            </Link> */}
+                        <ContactCard
+              type='phone'
+              title={t('title_phone')}
+              description={t('description_phone')}
+              linkHref="tel: +5585999670502"
+              linkTitle="+55 (85) 9 9967-0502"
+            />
           </motion.div>
           <motion.div
-        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
-        transition={{ duration: 0.8 }} className='w-full max-w-[384px] flexCenter flex lg:items-start flex-col'>
-            <HiOutlineLocationMarker
+            whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+            transition={{ duration: 0.8 }} className='w-full max-w-[384px] flexCenter flex lg:items-start flex-col'>
+            {/* <HiOutlineLocationMarker
               size={50}
               color='#010326'
             />
@@ -68,7 +83,14 @@ const Contact = () => {
               className='underline text-gray-50 hover:text-green-100 transition-all text-center lg:text-start hover:font-bold'
             >
               117 Rua Pedro Gomes, São Gonçalo do Amarante , Brazil
-            </Link>
+            </Link> */}
+            <ContactCard
+              type='location'
+              title={t('title_hq')}
+              description={t('description_hq')}
+              linkHref="https://maps.app.goo.gl/uTh4iHp3iuLNcPgMA"
+              linkTitle="117 Rua Pedro Gomes, São Gonçalo do Amarante , Brazil"
+            />
           </motion.div>
         </div>
       </div>
