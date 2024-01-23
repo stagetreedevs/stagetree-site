@@ -17,7 +17,7 @@ const Technologies = () => {
                 whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
                 transition={{ duration: 0.5 }} className='maxContainer paddingContainer flexBetween flex-col lg:flex-row '>
 
-                <div className='mb-20 lg:mb-0 max-w-[100%] lg:max-w-[50%] h-[100px] lg:h-[300px] flex flex-col'>
+                <div className='mb-20 lg:mb-0 max-w-[100%] lg:max-w-[50%] h-full lg:h-[300px] flex flex-col'>
 
                     <div className='h-[50%] flex items-end lg:justify-start justify-center'>
                         <h2 className='bold-32 mb-4 text-center lg:text-start lg:bold-44 h-[50%]'>
